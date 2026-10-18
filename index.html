@@ -1,0 +1,640 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is College Worth It?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--f:'Fredoka','Arial Rounded MT Bold','Trebuchet MS',sans-serif;--b:'Nunito','Segoe UI',Arial,sans-serif;--n:#23305a;--r:#e8553d;--g:#ffc83d;--t:#2bb3a3}
+html,body{margin:0;height:100%;background:#05070d;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;overflow:hidden;transform-origin:center;background:#8cc8f0;font-family:var(--b);cursor:pointer;user-select:none;-webkit-user-select:none}
+#sky,#far,#world,#ui,#tint,#vig{position:absolute;left:0;top:0}
+#sky,#tint,#vig,#ui{width:1600px;height:900px;pointer-events:none}
+#sun{position:absolute;left:0;top:0;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;background:radial-gradient(circle,#fffbe6 30%,#ffe88a 62%,#ffe88a00 72%);box-shadow:0 0 120px 50px #fff3c455}
+#far,#world{transform-origin:0 0;will-change:transform}
+#tint{background:linear-gradient(180deg,#ff8f5a55,#ffb36b88);mix-blend-mode:multiply;opacity:0}
+#vig{background:radial-gradient(ellipse at 50% 45%,#0000 58%,#0a102255 100%)}
+.zn,.ly,#back,#layers,#samL,#front{position:absolute;left:0;top:0}
+.zn{overflow:visible}
+.ly>*,#back>*,#front>*,#samL>*{position:absolute;left:0;top:0}
+.ly>*,.cx{width:max-content}
+/* character */
+.ch{will-change:transform}.ch .ci{transform-origin:50% 100%}
+.ch svg,.mn svg{overflow:visible;display:block}
+.ch [class^="x-"],.ch [class*=" x-"],.mn [class^="x-"],.mn [class*=" x-"]{display:none}
+.ch.barista .x-barista,.ch.steam .x-steam,.ch.cap .x-cap,.ch.hat .x-hat,.ch.pack .x-pack,.ch.gown .x-gown,.ch.apron .x-apron,.ch.letter .x-letter,.ch.watch .x-watch,.ch.dip .x-dip,.ch.sweat .x-sweat{display:inline}
+.mn.cap .x-cap,.mn.book .x-book,.mn.apron .x-apron{display:inline}
+.ch.gown .sh,.ch.gown .sl{fill:#23305a}
+.ch .lg,.ch .ar,.ch .hd,.ch .ey,.ch .bd{transform-box:fill-box}
+.ch .lg{transform-origin:50% 0}.ch .ar{transform-origin:50% 8%}.ch .hd{transform-origin:50% 92%;animation:nod 3.4s ease-in-out infinite}
+.ch .ey{transform-origin:center;animation:blink 4.3s infinite}
+.ch .bd{transform-origin:50% 100%;animation:br 3s ease-in-out infinite}
+.ch.walk .l1,.ch.run .l1{animation:sw .4s ease-in-out infinite alternate}.ch.walk .l2,.ch.run .l2{animation:sw .4s ease-in-out infinite alternate-reverse}
+.ch.walk .a1,.ch.run .a1{animation:sw2 .4s ease-in-out infinite alternate-reverse}.ch.walk .a2,.ch.run .a2{animation:sw2 .4s ease-in-out infinite alternate}
+.ch.run .l1,.ch.run .l2,.ch.run .a1,.ch.run .a2{animation-duration:.2s}
+.ch.walk .bd,.ch.run .bd{animation:bob .2s ease-in-out infinite alternate}
+.ch.cheer .a1{animation:ch1 .45s ease-in-out infinite alternate}.ch.cheer .a2{animation:ch2 .45s ease-in-out infinite alternate}
+.ch.wave .a2{animation:wv .45s ease-in-out infinite alternate}
+.ch.throw .a2{animation:thr .55s ease-out both}
+.ch.point .a2{transform:rotate(-100deg)}
+.ch.up .hd{animation:none;transform:rotate(-8deg)}
+@keyframes sw{from{transform:rotate(-26deg)}to{transform:rotate(26deg)}}
+@keyframes sw2{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+@keyframes bob{to{transform:translateY(-6px)}}
+@keyframes br{50%{transform:scaleY(.985)}}
+@keyframes nod{50%{transform:rotate(2.5deg)}}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes ch1{from{transform:rotate(140deg)}to{transform:rotate(165deg)}}
+@keyframes ch2{from{transform:rotate(-140deg)}to{transform:rotate(-165deg)}}
+@keyframes wv{from{transform:rotate(-150deg)}to{transform:rotate(-115deg)}}
+@keyframes thr{0%{transform:rotate(0)}35%{transform:rotate(-210deg)}100%{transform:rotate(-120deg)}}
+/* text blocks in the world */
+.cx{transform:translateX(-50%)}
+.bx{background:#fffdf7;border-radius:26px;padding:18px 30px 20px;box-shadow:0 8px 0 #23305a22,0 20px 44px #0a12304d;color:var(--n);font-family:var(--b);font-weight:800}
+.kk{font:600 21px var(--f);letter-spacing:.15em;text-transform:uppercase;color:var(--r)}
+.nm,.ttl h1 span,.big{font-family:var(--f);font-weight:700;color:var(--g);--o:#23305a;text-shadow:5px 0 var(--o),-5px 0 var(--o),0 5px var(--o),0 -5px var(--o),4px 4px var(--o),-4px 4px var(--o),4px -4px var(--o),-4px -4px var(--o),0 11px 0 var(--o),0 18px 22px #0005}
+.nm{font-size:122px;line-height:1.05;white-space:nowrap}.nm.sm{font-size:84px}.nm.xs{font-size:64px}
+.nt{font:800 22px/1.35 var(--b);color:#4a5578;margin-top:6px}.nt.lg{font-size:26px;color:var(--n)}
+.chip{background:var(--n);color:#fff;font:600 25px/1.2 var(--f);padding:11px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 0 #0a1230,0 12px 22px #0004}
+.chip b{color:var(--g);font-weight:700}.chip.r{background:var(--r);box-shadow:0 6px 0 #a5341f,0 12px 22px #0004}.chip.t{background:var(--t);box-shadow:0 6px 0 #1a7d72,0 12px 22px #0004}
+.chip.sm{font-size:20px;padding:8px 16px}.chip.wrap{white-space:normal;text-align:center;border-radius:22px}
+.bub{background:#fff;border:4px solid var(--n);border-radius:24px;padding:8px 20px 10px;font:700 30px var(--f);color:var(--n);white-space:nowrap;box-shadow:0 8px 0 #23305a33}
+.bub::after{content:"";position:absolute;left:var(--tx,30px);bottom:-19px;width:22px;height:22px;background:#fff;border:4px solid var(--n);border-top:0;border-left:0;transform:rotate(45deg)}
+.bub.l::after{left:auto;right:30px}
+.ttl .tk{display:inline-block;background:var(--r);color:#fff;font:600 24px var(--f);letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;border-radius:12px;box-shadow:0 6px 0 #a5341f}
+.ttl h1{margin:18px 0 0;font-size:0}.ttl h1 span{display:block;font-size:118px;line-height:1.02}.ttl h1 .l1{color:#fff}
+.ttl p{margin:22px 0 0;font:700 34px var(--f);color:#fff;--o:#23305a;text-shadow:3px 0 var(--o),-3px 0 var(--o),0 3px var(--o),0 -3px var(--o),0 6px 0 var(--o)}
+.cw{transform:rotate(var(--r,0deg));animation:bobc 4.6s ease-in-out infinite}
+@keyframes bobc{50%{transform:translateY(-12px) rotate(calc(var(--r,0deg)*-.6))}}
+.card{width:400px;height:240px;box-sizing:border-box;background:#fffdf7;border-radius:8px;box-shadow:0 16px 34px #0a12304d;padding:30px 30px;display:flex;align-items:center}
+.card h3{margin:0 0 10px;font:700 40px var(--f);color:var(--n)}.card p{margin:0;font:800 23px/1.35 var(--b);color:#4a5578}
+.pin{position:absolute;top:-12px;left:50%;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9b86,var(--r) 60%);box-shadow:0 4px 6px #0005}
+.plane{width:110px;height:66px;filter:drop-shadow(0 10px 8px #0a123040)}
+.ball{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0,#f2f0ea 30%,#cfcbc2 72%,#9b978f 100%);box-shadow:0 5px 10px #0004}
+.ball::before{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,#0000 38%,#0003 40%,#0000 43%),linear-gradient(35deg,#0000 54%,#0003 56%,#0000 59%),linear-gradient(160deg,#0000 20%,#0002 22%,#0000 25%)}
+.crown{width:190px;height:170px;margin:-85px 0 0 -95px}
+.trunk{width:30px;margin-left:-15px;background:linear-gradient(90deg,#8d5f3c,#6b4429);border-radius:10px;transform-origin:50% 100%}
+.tag{background:var(--g);border:4px solid var(--n);border-radius:16px;padding:4px 16px 6px;font:700 36px var(--f);color:var(--n);white-space:nowrap;box-shadow:0 7px 0 var(--n);text-align:center;line-height:1.05}
+.tag s{display:block;font-size:20px;color:#7a6a3a}
+.lbl{text-align:center;font:700 22px/1.15 var(--f);color:#fff;--o:#23305a;text-shadow:3px 0 var(--o),-3px 0 var(--o),0 3px var(--o),0 -3px var(--o),2px 2px var(--o),-2px -2px var(--o),2px -2px var(--o),-2px 2px var(--o);white-space:nowrap}
+.lbl span{display:block;font-size:17px;color:var(--g)}
+.slice{background:repeating-linear-gradient(135deg,#2bb3a3cc 0 16px,#5fd3c6cc 16px 32px);border:4px dashed #fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font:700 26px var(--f);color:#fff;text-shadow:0 2px 0 #1a7d72}
+.yr{background:var(--n);color:#fff;font:700 40px var(--f);padding:10px 28px;border-radius:18px;box-shadow:0 7px 0 #0a1230;white-space:nowrap}.yr span{color:var(--g)}
+.coin{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3b0,#ffc83d 55%,#d9931a);border:3px solid #b9781a}
+.score{background:#1b2546;border:6px solid #39466e;border-radius:16px;padding:10px 26px;color:#9fb3ff;font:600 24px var(--f);letter-spacing:.12em;white-space:nowrap;box-shadow:0 10px 24px #0005;text-align:center}
+.score b{display:block;color:var(--g);font:700 64px/1 var(--f);letter-spacing:.04em;text-shadow:0 0 18px #ffc83d88}
+.flag{background:#fff;border:4px solid var(--n);border-radius:12px;padding:1px 10px;font:700 19px var(--f);color:var(--n);white-space:nowrap}.flag b{color:var(--r)}
+.spot{width:360px;height:640px;margin-left:-180px;background:linear-gradient(180deg,#fff7c000,#fff7c055 60%,#fff7c088);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);mix-blend-mode:screen}
+.brk{border:5px solid #fff;border-bottom:0;height:22px;border-radius:10px 10px 0 0;filter:drop-shadow(0 3px 0 #23305a)}
+.door{background:linear-gradient(90deg,#8d5a32,#b07a4a 50%,#8d5a32);border:5px solid #5a3a20;border-radius:8px 8px 0 0;transform-origin:0 50%}
+.door::after{content:"";position:absolute;right:16px;top:52%;width:14px;height:14px;border-radius:50%;background:var(--g)}
+.card2{width:390px;box-sizing:border-box;background:#fffdf7;border-radius:22px;padding:18px 24px;box-shadow:0 8px 0 #23305a22,0 18px 36px #0a12304d}
+.card2 h3{margin:0 0 6px;font:700 32px var(--f);color:var(--n)}.card2 p{margin:0;font:800 20px/1.38 var(--b);color:#4a5578}.card2 h3 i{font-style:normal;color:var(--r)}
+.stk{width:116px;margin-left:-58px;background:repeating-linear-gradient(0deg,#fffdf7 0 13px,#d9d1c0 13px 15px);border:4px solid var(--n);border-radius:6px;box-shadow:0 10px 18px #0004}
+.env{width:46px;height:30px;background:#fffdf7;border:3px solid var(--n);border-radius:4px}
+.win{width:52px;height:34px;border-radius:5px;background:#2a3a5c;box-shadow:inset 0 0 0 3px #e9e1d1}
+.rain{width:46px;height:26px;margin:-26px 0 0 3px}
+.mn{will-change:transform}.mn.gray{filter:grayscale(1) brightness(1.15);opacity:.5}
+.gl{text-align:center}.gl .nm{font-size:58px}.gl div{font:700 21px var(--f);color:#fff;--o:#23305a;text-shadow:3px 0 var(--o),-3px 0 var(--o),0 3px var(--o),0 -3px var(--o),2px 2px var(--o),-2px -2px var(--o)}
+.panel{background:#fffdf7ee;border-radius:30px;box-shadow:0 10px 0 #23305a22,0 22px 44px #0a12304d}
+.rul{height:10px;border-radius:6px;background:#e3dccd}
+.trail{height:10px;border-radius:6px;background:linear-gradient(90deg,#ffc83d,#e8553d);transform-origin:0 50%}
+.plank{width:470px;height:110px;box-sizing:border-box;background:linear-gradient(180deg,#d9a46a,#b57a43);border-radius:10px;padding:14px 34px;color:#3a2412;box-shadow:0 8px 0 #7a4d27,0 16px 26px #0004}
+.plank.L{clip-path:polygon(9% 0,100% 0,100% 100%,9% 100%,0 50%);padding-left:62px}.plank.R{clip-path:polygon(0 0,91% 0,100% 50%,91% 100%,0 100%);padding-right:62px}
+.plank h4{margin:0;font:700 30px var(--f)}.plank p{margin:4px 0 0;font:800 18px/1.3 var(--b);color:#4d3018}
+.bus{width:330px;height:150px}
+.fin{width:960px;box-sizing:border-box;background:#fffdf7;border-radius:12px;box-shadow:0 20px 44px #0a12304d;padding:34px 46px;text-align:center}
+.fin h2{margin:10px 0 0;font:700 50px/1.12 var(--f);color:var(--n)}.fin h2 em{font-style:normal;color:var(--r)}.fin p{margin:14px 0 0;font:800 26px var(--b);color:#4a5578}
+.thx{font-size:96px;text-align:center}
+/* UI */
+#chap{position:absolute;left:30px;top:26px;display:flex;align-items:center;gap:12px;opacity:0}
+#chap .c1{background:var(--r);color:#fff;font:600 18px var(--f);letter-spacing:.18em;padding:8px 14px;border-radius:10px;box-shadow:0 5px 0 #a5341f}
+#chap .c2{font:700 34px var(--f);color:#fff;--o:#23305a;text-shadow:3px 0 var(--o),-3px 0 var(--o),0 3px var(--o),0 -3px var(--o),2px 2px var(--o),-2px -2px var(--o),0 6px 0 var(--o)}
+#sub{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);width:1440px;text-align:center}
+#sub div{display:inline;background:#0b1122b8;color:#fff;font:600 28px/1.5 var(--f);padding:5px 18px;border-radius:14px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#sub span{opacity:0;display:inline-block}#sub span.on{animation:wd .35s ease-out forwards}
+@keyframes wd{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#src{position:absolute;left:30px;bottom:16px;max-width:1300px;font:800 15px var(--b);color:#fff;text-shadow:0 1px 3px #000,0 0 2px #000;opacity:.92}
+#pn{position:absolute;right:28px;bottom:14px;font:700 18px var(--f);color:#fff;text-shadow:0 1px 3px #000}
+#bar{position:absolute;left:0;bottom:0;height:7px;background:var(--g);transition:width .6s}
+#hint{position:absolute;right:28px;top:26px;font:700 16px var(--f);color:#fff;opacity:.75;text-shadow:0 1px 3px #000}
+.ch .st1,.ch .st2{transform-box:fill-box;transform-origin:50% 100%}
+.ch.steam .st1{animation:stm .7s ease-out infinite}.ch.steam .st2{animation:stm .7s .35s ease-out infinite}
+@keyframes stm{0%{transform:translateY(10px) scale(.4);opacity:0}30%{opacity:1}100%{transform:translateY(-34px) scale(1.25);opacity:0}}
+.ch.fists .a1{animation:fs1 .16s ease-in-out infinite alternate}.ch.fists .a2{animation:fs2 .16s ease-in-out infinite alternate}
+@keyframes fs1{from{transform:rotate(125deg)}to{transform:rotate(150deg)}}@keyframes fs2{from{transform:rotate(-125deg)}to{transform:rotate(-150deg)}}
+.rb{width:1060px;box-sizing:border-box;background:linear-gradient(180deg,#26335f,#1b2546);border:7px solid #ffc83d;border-radius:26px;padding:22px 30px 18px;box-shadow:0 14px 0 #0a1230,0 26px 50px #0006}
+.rb .hd{font:700 26px var(--f);color:#ffc83d;letter-spacing:.06em}.rb .hs{font:800 18px var(--b);color:#9fb3ff;margin:2px 0 12px}
+.rr{display:flex;align-items:center;height:58px}.rr .ml{flex:none;width:250px;font:700 28px var(--f);color:#fff}
+.rr .tk2{flex:none;width:500px;height:38px;background:#ffffff14;border-radius:10px;overflow:hidden}.rr .bf{height:100%;border-radius:10px;background:linear-gradient(90deg,#ff8a5c,#e8553d);transform-origin:0 50%}
+.rr.ref .bf{background:linear-gradient(90deg,#9aa8bd,#7d8aa0)}.rr.ref .ml,.rr.ref .pv{color:#c9d3e6}
+.rr .pv{width:110px;text-align:right;font:700 34px var(--f);color:#ffc83d}.rr .un{margin-left:14px;font:800 16px var(--b);color:#ff9b86;white-space:nowrap}
+.ch .tg{transform-box:fill-box;transform-origin:center}.ch.fl .tg{transform:scaleX(-1)}
+.srcp{width:1460px;box-sizing:border-box;background:#fffdf7f2;border-radius:30px;padding:26px 40px 30px;box-shadow:0 10px 0 #23305a22,0 24px 50px #0a12304d;cursor:default}
+.srcp h2{margin:0 0 14px;font:700 46px var(--f);color:var(--n)}
+.sg{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;row-gap:9px}
+.sr{display:flex;align-items:baseline;gap:12px;font:800 17px/1.3 var(--b);color:#4a5578}
+.sr .sb{flex:none;min-width:96px;text-align:center;background:var(--n);color:var(--g);font:600 14px var(--f);padding:3px 10px;border-radius:999px}
+.sr a{color:#23305a;text-decoration:underline;text-decoration-color:#e8553d;text-underline-offset:3px}.sr a:hover{color:#e8553d}
+.sr.nt2{grid-column:1 / -1;font-style:italic}
+.lbl.st{white-space:normal;width:230px;font-size:22px}.lbl.st span{font-size:28px}
+.card2 h3 i{color:#2bb3a3}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="sk1" cx=".38" cy=".3" r=".78"><stop offset="0" stop-color="#ffe6d0"/><stop offset="1" stop-color="#f0b893"/></radialGradient>
+<radialGradient id="sk2" cx=".38" cy=".3" r=".78"><stop offset="0" stop-color="#f8d0aa"/><stop offset="1" stop-color="#d8945f"/></radialGradient>
+<radialGradient id="sk3" cx=".38" cy=".3" r=".78"><stop offset="0" stop-color="#d49a6c"/><stop offset="1" stop-color="#965e38"/></radialGradient>
+<radialGradient id="sk4" cx=".38" cy=".3" r=".78"><stop offset="0" stop-color="#9a6847"/><stop offset="1" stop-color="#5e3a24"/></radialGradient>
+<linearGradient id="shd" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>
+<linearGradient id="gL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9edb78"/><stop offset="1" stop-color="#5aae4c"/></linearGradient>
+<linearGradient id="gS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e8cc"/><stop offset="1" stop-color="#dcc9a0"/></linearGradient>
+<linearGradient id="gF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#62b250"/><stop offset="1" stop-color="#3b8a3a"/></linearGradient>
+<radialGradient id="gT1" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#b0e486"/><stop offset="1" stop-color="#4b9a40"/></radialGradient>
+<radialGradient id="gT2" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#9ad776"/><stop offset="1" stop-color="#3c8a3b"/></radialGradient>
+<linearGradient id="gBr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cf6448"/><stop offset="1" stop-color="#9e412d"/></linearGradient>
+<linearGradient id="gBr2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f09a72"/><stop offset="1" stop-color="#d06a4a"/></linearGradient>
+<linearGradient id="gSt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6eedd"/><stop offset="1" stop-color="#d9c9a8"/></linearGradient>
+<linearGradient id="gSt2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd5df"/><stop offset="1" stop-color="#9aa4b4"/></linearGradient>
+<linearGradient id="gGl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cdeaff"/><stop offset=".5" stop-color="#8cc6ec"/><stop offset="1" stop-color="#5a98c8"/></linearGradient>
+<linearGradient id="gWd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c99260"/><stop offset="1" stop-color="#8d5a32"/></linearGradient>
+<linearGradient id="gTr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9714a"/><stop offset="1" stop-color="#b34f2e"/></linearGradient>
+<linearGradient id="gMt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d949d"/><stop offset=".35" stop-color="#e6e9ee"/><stop offset=".62" stop-color="#c3c8cf"/><stop offset="1" stop-color="#7d848d"/></linearGradient>
+<radialGradient id="gGw" cx=".5" cy=".55" r=".7"><stop offset="0" stop-color="#fff2b8"/><stop offset="1" stop-color="#ffab45"/></radialGradient>
+<linearGradient id="gCt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34447a"/><stop offset="1" stop-color="#1c2547"/></linearGradient>
+<linearGradient id="gH1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3c6"/><stop offset="1" stop-color="#9fd0ad"/></linearGradient>
+<linearGradient id="gH2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd791"/><stop offset="1" stop-color="#7fc277"/></linearGradient>
+<linearGradient id="gCl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#fff"/><stop offset="1" stop-color="#dcecf8"/></linearGradient>
+</defs></svg>
+<div id="stage">
+ <div id="sky"><div id="sun"></div></div>
+ <div id="far"></div>
+ <div id="world"><div id="zones"></div><div id="back"></div><div id="layers"></div><div id="samL"></div><div id="front"></div></div>
+ <div id="tint"></div><div id="vig"></div>
+ <div id="ui"><div id="chap"><span class="c1"></span><span class="c2"></span></div><div id="sub"></div><div id="src"></div><div id="pn"></div><div id="bar"></div><div id="hint">&larr; &rarr; or click</div></div>
+</div>
+<script>
+// ================= utilities =================
+const $=(t,c,p,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;if(p)p.appendChild(e);return e};
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),lerp=(a,b,t)=>a+(b-a)*t;
+const E={io:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,o:t=>1-Math.pow(1-t,3),i:t=>t*t,l:t=>t,s:t=>t*t*(3-2*t)};
+let FAST=0;
+const wait=ms=>FAST||ms<=0?Promise.resolve():new Promise(r=>setTimeout(r,ms));
+function tw(d,f,e=E.io){return new Promise(r=>{if(FAST||d<=0){f(1);r();return}const t0=performance.now();const s=n=>{const p=clamp((n-t0)/d,0,1);f(e(p));p<1?requestAnimationFrame(s):r()};requestAnimationFrame(s)})}
+function A(el,kf,d,o={}){if(!el)return{finished:Promise.resolve()};if(FAST){d=1;o={...o,delay:0}}return el.animate(kf,{duration:d,fill:'both',easing:'cubic-bezier(.3,.7,.3,1)',...o})}
+const at=(el,x,y)=>{el.style.left=x+'px';el.style.top=y+'px';return el};
+const pop=(el,dl=0,d=650)=>A(el,[{opacity:0,transform:'translateY(30px) scale(.35)'},{opacity:1,transform:'translateY(-6px) scale(1.07)',offset:.65},{opacity:1,transform:'none'}],d,{delay:dl});
+const fadeIn=(el,dl=0,d=500)=>A(el,[{opacity:0},{opacity:1}],d,{delay:dl});
+const fadeOut=(el,dl=0,d=400)=>A(el,[{opacity:1},{opacity:0}],d,{delay:dl});
+// centered element: outer positions (x = center), inner animates
+function C(L,x,y,html,cls){const o=$('div','cx',L);at(o,x,y);return $('div',cls||'',o,html)}
+function box(L,x,y,w,html,cls){const d=$('div','bx '+(cls||''),L,html);at(d,x,y);if(w)d.style.width=w+'px';return d}
+function bub(L,x,y,txt,left){const b=$('div','bub'+(left?' l':''),L,txt);at(b,x,y);return b}
+const fmt=(v,dec=0)=>Number(v.toFixed(dec)).toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+function cnt(el,to,{dec=0,pre='',suf='',d=1300,dl=0,from=0}={}){el.textContent=pre+fmt(from,dec)+suf;return wait(dl).then(()=>tw(d,p=>el.textContent=pre+fmt(from+(to-from)*p,dec)+suf,E.o))}
+const R=sd=>{let s=sd*7919%233280;return()=>{s=(s*9301+49297)%233280;return s/233280}};
+const ZW=1600,GY=790;
+
+// ================= camera =================
+const stage=document.getElementById('stage'),world=document.getElementById('world'),far=document.getElementById('far'),sky=document.getElementById('sky'),sun=document.getElementById('sun'),tint=document.getElementById('tint');
+const zones=document.getElementById('zones'),back=document.getElementById('back'),layers=document.getElementById('layers'),samL=document.getElementById('samL'),front=document.getElementById('front');
+const cam={x:0,y:0,z:1};let camId=0,shk=null;
+function camTo(x,y,z,d,e=E.io){const id=++camId,a={...cam};return tw(d,p=>{if(id!==camId)return;cam.x=lerp(a.x,x,p);cam.y=lerp(a.y,y,p);cam.z=lerp(a.z,z,p)},e)}
+function shake(a=14,d=450){if(!FAST)shk={a,d,t0:performance.now()}}
+const hx=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mixA=(a,b,t)=>a.map((v,i)=>lerp(v,b[i],t)),rgb=a=>`rgb(${a.map(Math.round).join(',')})`;
+const SKY={t0:hx('#4b9de6'),t1:hx('#2a6fc6'),ts:hx('#6c5aa6'),h0:hx('#d8effb'),h1:hx('#8fc9f0'),hs:hx('#ffc48c')};
+let lastSky='';
+function render(){const t=performance.now();let ox=0,oy=0;
+ if(shk){const p=(t-shk.t0)/shk.d;if(p>=1)shk=null;else{const a=shk.a*(1-p);ox=(Math.random()-.5)*a;oy=(Math.random()-.5)*a}}
+ const z=cam.z*(1+.007*Math.sin(t/2700));
+ world.style.transform=`translate(800px,450px) scale(${z}) translate(${-(cam.x+800+ox)}px,${-(cam.y+450+oy)}px)`;
+ const fz=1+(z-1)*.35;far.style.transform=`translate(800px,450px) scale(${fz}) translate(${-(cam.x*.35+800)}px,${-(cam.y*.85+450)}px)`;
+ const ty=clamp(-cam.y/1500,0,1),ts=clamp((cam.x-20700)/1500,0,1);
+ const top=rgb(mixA(mixA(SKY.t0,SKY.t1,ty),SKY.ts,ts)),hor=rgb(mixA(mixA(SKY.h0,SKY.h1,ty),SKY.hs,ts));
+ const k=top+hor+Math.round(ty*100);
+ if(k!==lastSky){lastSky=k;sky.style.background=`linear-gradient(180deg,${top} 0%,${hor} ${Math.round(lerp(64,100,ty))}%)`}
+ sun.style.transform=`translate(${1250-ts*80}px,${130+ts*300-cam.y*.04}px)`;sun.style.filter=ts?`hue-rotate(${-ts*25}deg) saturate(${1+ts})`:'';
+ tint.style.opacity=(ts*.32).toFixed(3);
+ requestAnimationFrame(render)}
+
+// ================= character rig =================
+function hair(st,c){const base=`<path d="M-66 -160 C-68 -216 -26 -230 0 -230 C32 -230 68 -214 66 -160 C60 -188 42 -198 20 -196 C10 -210 -8 -210 -16 -196 C-38 -200 -58 -190 -66 -160Z" fill="${c}"/><path d="M-40 -205 Q-10 -222 22 -214" stroke="#fff" stroke-opacity=".25" stroke-width="7" fill="none" stroke-linecap="round"/>`;
+ if(st==='bun')return base+`<circle cx="0" cy="-232" r="24" fill="${c}"/>`;
+ if(st==='long')return base+`<path d="M-66 -160 Q-74 -104 -56 -86 L-48 -150Z M66 -160 Q74 -104 56 -86 L48 -150Z" fill="${c}"/>`;
+ if(st==='curly')return `<g fill="${c}">${[[-50,-190],[-30,-212],[-4,-222],[24,-216],[48,-198],[60,-172],[-62,-168]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="26"/>`).join('')}</g>`;
+ return base}
+function face(f){
+ const N=`<g class="ey"><ellipse cx="-22" cy="-150" rx="7.5" ry="10.5" fill="#1b1b24"/><ellipse cx="22" cy="-150" rx="7.5" ry="10.5" fill="#1b1b24"/><circle cx="-19" cy="-154" r="3" fill="#fff"/><circle cx="25" cy="-154" r="3" fill="#fff"/></g>`;
+ const BL=`<ellipse cx="-38" cy="-128" rx="10" ry="6" fill="#ff7d7d" opacity=".45"/><ellipse cx="38" cy="-128" rx="10" ry="6" fill="#ff7d7d" opacity=".45"/>`;
+ const M=d=>`<path d="${d}" stroke="#5a2a22" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+ const SW=`<path d="M56 -196 q9 15 0 22 q-9 -7 0 -22z" fill="#7fd0ff" stroke="#3b8fd0" stroke-width="2"/>`;
+ switch(f){
+  case'grin':return BL+`<path d="M-33 -148 Q-22 -161 -11 -148 M11 -148 Q22 -161 33 -148" stroke="#1b1b24" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M-15 -131 Q0 -108 15 -131Z" fill="#5a2a22"/><path d="M-8 -118 Q0 -112 8 -118" stroke="#ff8f8f" stroke-width="4" fill="none"/>`;
+  case'shock':return BL+`<circle cx="-22" cy="-152" r="13" fill="#fff" stroke="#1b1b24" stroke-width="3"/><circle cx="22" cy="-152" r="13" fill="#fff" stroke="#1b1b24" stroke-width="3"/><circle cx="-22" cy="-151" r="4.5" fill="#1b1b24"/><circle cx="22" cy="-151" r="4.5" fill="#1b1b24"/><ellipse cx="0" cy="-121" rx="8" ry="11" fill="#5a2a22"/>`+SW;
+  case'worry':return BL+N+`<path d="M-33 -171 L-12 -165 M33 -171 L12 -165" stroke="#3a2a22" stroke-width="4" stroke-linecap="round"/>`+M('M-13 -124 Q-6 -131 0 -124 Q6 -117 13 -124')+SW;
+  case'sad':return BL+N+`<path d="M-33 -165 L-13 -172 M33 -165 L13 -172" stroke="#3a2a22" stroke-width="4" stroke-linecap="round"/>`+M('M-11 -119 Q0 -130 11 -119');
+  case'think':return BL+`<g class="ey"><ellipse cx="-22" cy="-150" rx="7.5" ry="10.5" fill="#1b1b24"/><ellipse cx="22" cy="-150" rx="7.5" ry="10.5" fill="#1b1b24"/><circle cx="-25" cy="-156" r="3" fill="#fff"/><circle cx="19" cy="-156" r="3" fill="#fff"/></g><path d="M-32 -170 L-12 -172 M12 -168 L32 -174" stroke="#3a2a22" stroke-width="4" stroke-linecap="round"/>`+M('M-9 -124 H11');
+  case'rage':return`<circle cx="0" cy="-150" r="56" fill="#ff3b2f" opacity=".28"/><path d="M-36 -176 L-10 -162 M36 -176 L10 -162" stroke="#1b1b24" stroke-width="7" stroke-linecap="round"/><ellipse cx="-21" cy="-148" rx="7" ry="8" fill="#1b1b24"/><ellipse cx="21" cy="-148" rx="7" ry="8" fill="#1b1b24"/><rect x="-20" y="-132" width="40" height="18" rx="5" fill="#fff" stroke="#5a2a22" stroke-width="4"/><path d="M-10 -132 V-114 M0 -132 V-114 M10 -132 V-114 M-20 -123 H20" stroke="#5a2a22" stroke-width="2.5"/><path d="M40 -200 l8 -10 l4 12 l10 -6" stroke="#e8553d" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+  case'relief':return BL+`<path d="M-33 -150 Q-22 -144 -11 -150 M11 -150 Q22 -144 33 -150" stroke="#1b1b24" stroke-width="5" fill="none" stroke-linecap="round"/>`+M('M-12 -128 Q0 -116 12 -128')+`<path d="M44 -132 q14 -2 22 6" stroke="#bfe6ff" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  default:return BL+N+M('M-12 -128 Q0 -116 12 -128')}}
+function chibi(o){const sk=o.skin||'sk1',sh=o.shirt||'#e8553d',pa=o.pants||'#2f3e66',hc=o.hairC||'#4a2f1f';
+ return`<ellipse cx="0" cy="0" rx="42" ry="10" fill="#0a1230" opacity=".22"/>
+<g class="x-pack"><rect x="-54" y="-114" width="108" height="90" rx="24" fill="#7b4fb0"/><rect x="-54" y="-114" width="108" height="90" rx="24" fill="url(#shd)"/></g>
+<g class="lg l1"><rect x="-20" y="-50" width="16" height="48" rx="8" fill="${pa}"/><ellipse cx="-13" cy="-4" rx="13" ry="7" fill="#2b2b33"/></g>
+<g class="lg l2"><rect x="4" y="-50" width="16" height="48" rx="8" fill="${pa}"/><ellipse cx="13" cy="-4" rx="13" ry="7" fill="#2b2b33"/></g>
+<g class="bd"><rect class="sh" x="-31" y="-106" width="62" height="66" rx="23" fill="${sh}"/><rect x="-31" y="-106" width="62" height="66" rx="23" fill="url(#shd)"/>
+<g class="x-gown"><path d="M-9 -104 L-15 -44 M9 -104 L15 -44" stroke="#ffc83d" stroke-width="8" stroke-linecap="round"/></g>
+<g class="x-apron"><path d="M-23 -86 H23 V-42 Q0 -36 -23 -42Z" fill="#2bb3a3"/><path d="M-13 -86 L-17 -104 M13 -86 L17 -104" stroke="#2bb3a3" stroke-width="4"/></g>
+<g class="x-barista"><path d="M-25 -90 H25 V-40 Q0 -33 -25 -40Z" fill="#1f6f4a"/><path d="M-14 -90 L-18 -105 M14 -90 L18 -105" stroke="#1f6f4a" stroke-width="5"/><rect x="-14" y="-82" width="28" height="13" rx="3" fill="#fff"/><text class="tg" x="0" y="-72" font-family="Fredoka,Arial" font-weight="700" font-size="10" text-anchor="middle" fill="#1f6f4a">SAM</text><path d="M-25 -58 H25" stroke="#2d8a5d" stroke-width="3"/></g><g class="x-pack"><path d="M-23 -103 L-21 -50 M23 -103 L21 -50" stroke="#5c3a8a" stroke-width="8" stroke-linecap="round"/></g>
+<g class="ar a1"><rect class="sl" x="-46" y="-102" width="17" height="50" rx="8.5" fill="${sh}"/><circle cx="-37.5" cy="-52" r="9.5" fill="url(#${sk})"/></g>
+<g class="ar a2"><rect class="sl" x="29" y="-102" width="17" height="50" rx="8.5" fill="${sh}"/><circle cx="37.5" cy="-52" r="9.5" fill="url(#${sk})"/>
+<g class="x-letter"><rect x="30" y="-80" width="36" height="27" rx="3" fill="#fff" stroke="#d8d2c4" stroke-width="2"/><path d="M30 -80 L48 -66 L66 -80" stroke="#d8d2c4" stroke-width="2" fill="none"/><circle cx="48" cy="-64" r="5" fill="#e8553d"/></g>
+<g class="x-barista"><path d="M34 -84 L62 -84 L58 -46 L38 -46Z" fill="#fff" stroke="#d8d2c4" stroke-width="2"/><rect x="36" y="-74" width="24" height="14" fill="#1f6f4a"/><rect x="31" y="-90" width="34" height="8" rx="3" fill="#f3efe6" stroke="#d8d2c4" stroke-width="2"/></g><g class="x-watch"><circle cx="48" cy="-56" r="12" fill="#f3f3f3" stroke="#555" stroke-width="3"/><path d="M48 -56 V-64" stroke="#e8553d" stroke-width="2.5"/><rect x="45" y="-72" width="6" height="5" fill="#555"/></g>
+<g class="x-dip"><g transform="rotate(-35 40 -56)"><rect x="34" y="-62" width="46" height="12" rx="6" fill="#fff" stroke="#d8d2c4" stroke-width="2"/><rect x="52" y="-62" width="6" height="12" fill="#e8553d"/></g></g></g>
+<g class="hd"><circle cx="0" cy="-158" r="63" fill="url(#${sk})"/>${hair(o.hair||'short',hc)}<g class="fc"></g>
+<g class="x-cap"><path d="M-74 -206 L0 -234 L74 -206 L0 -180Z" fill="#23305a"/><path d="M-42 -200 V-180 Q0 -166 42 -180 V-200" fill="#1b2546"/><path d="M52 -208 L60 -170" stroke="#ffc83d" stroke-width="4"/><circle cx="60" cy="-167" r="6" fill="#ffc83d"/></g>
+<g class="x-barista"><path d="M-62 -190 Q0 -228 62 -190 L62 -176 Q0 -206 -62 -176Z" fill="#1f6f4a"/><path d="M-66 -180 Q0 -200 92 -170 Q40 -168 -66 -170Z" fill="#17583a"/></g><g class="x-hat"><path d="M-60 -190 Q0 -262 60 -190Z" fill="#ffc83d"/><rect x="-70" y="-194" width="140" height="13" rx="6" fill="#f0a91e"/><rect x="-6" y="-246" width="12" height="54" rx="6" fill="#f7d35a"/></g>
+<g class="x-steam"><g class="st1"><circle cx="-74" cy="-176" r="14" fill="#fff" opacity=".9"/><circle cx="-90" cy="-196" r="10" fill="#fff" opacity=".8"/></g><g class="st2"><circle cx="74" cy="-176" r="14" fill="#fff" opacity=".9"/><circle cx="90" cy="-196" r="10" fill="#fff" opacity=".8"/></g></g><g class="x-sweat"><path d="M-62 -196 q9 15 0 22 q-9 -7 0 -22z" fill="#7fd0ff" stroke="#3b8fd0" stroke-width="2"/></g></g></g>`}
+const POSES=['cheer','wave','throw','point','up','fists'],ACCS=['cap','hat','pack','gown','apron','letter','watch','dip','sweat','steam','barista'];
+function Char(par,o={}){const s=o.s||1,el=$('div','ch',par);
+ el.innerHTML=`<div class="ci"><svg viewBox="-95 -250 190 262" width="${190*s}" height="${262*s}">${chibi(o)}</svg></div>`;
+ const ci=el.firstChild,sv=ci.firstChild,c={el,ci,s,x:0,y:0,dir:1,mv:0};
+ c.set=(x,y)=>{c.x=x;c.y=y;el.style.transform=`translate(${x-95*s}px,${y-250*s}px)`};
+ c.flip=d=>{c.dir=d;ci.style.transform=d<0?'scaleX(-1)':'';el.classList.toggle('fl',d<0)};
+ c.face=f=>{el.querySelector('.fc').innerHTML=face(f||'smile')};
+ c.acc=list=>{ACCS.forEach(a=>el.classList.toggle(a,list.includes(a)))};
+ c.on=(a,v=true)=>el.classList.toggle(a,v);
+ c.pose=p=>{POSES.forEach(a=>el.classList.toggle(a,a===p))};
+ c.walkTo=(x,y,d,e=E.io)=>{const id=++c.mv,x0=c.x,y0=c.y;if(Math.abs(x-x0)>2)c.flip(x>x0?1:-1);const sp=Math.hypot(x-x0,y-y0)/Math.max(d,1);if(!FAST)el.classList.add(sp>.7?'run':'walk');
+  return tw(d,p=>{if(id===c.mv)c.set(lerp(x0,x,p),lerp(y0,y,p))},e).then(()=>{if(id===c.mv)el.classList.remove('walk','run')})};
+ c.hop=(x,y,d,h=90)=>{const id=++c.mv,x0=c.x,y0=c.y;if(Math.abs(x-x0)>2)c.flip(x>x0?1:-1);return tw(d,p=>{if(id===c.mv)c.set(lerp(x0,x,p),lerp(y0,y,p)-Math.sin(p*Math.PI)*h)},E.s)};
+ c.squash=()=>A(sv,[{transform:'none'},{transform:'scale(1.12,.84)',offset:.3},{transform:'scale(.95,1.06)',offset:.65},{transform:'none'}],500,{easing:'ease-out',fill:'none'});
+ c.jump=()=>A(sv,[{transform:'none'},{transform:'translateY(-40px) scale(.96,1.05)',offset:.4},{transform:'none'}],420,{easing:'ease-out',fill:'none'});
+ sv.style.transformOrigin='50% 95%';
+ c.set(o.x||0,o.y||GY);if(o.flip)c.flip(o.flip);c.face(o.face);if(o.acc)c.acc(o.acc);return c}
+// tiny crowd figure
+const MSK=['sk1','sk2','sk3','sk4'],MHC=['#4a2f1f','#1e1a1a','#7a4a24','#c9892f','#2a2030'],MSH=['#e8553d','#2bb3a3','#3a7bd5','#f29a2e','#8a5cc2','#d94f8a','#4fa64f'];
+function mini(o){return`<svg viewBox="-40 -126 80 132" width="52" height="86"><ellipse cx="0" cy="0" rx="18" ry="5" fill="#0a1230" opacity=".22"/><rect x="-10" y="-26" width="8" height="24" rx="4" fill="#2f3e66"/><rect x="2" y="-26" width="8" height="24" rx="4" fill="#2f3e66"/><rect x="-17" y="-58" width="34" height="38" rx="13" fill="${o.sh}"/><g class="x-apron"><rect x="-12" y="-48" width="24" height="26" rx="5" fill="#2bb3a3"/></g><g class="x-book"><rect x="9" y="-52" width="22" height="28" rx="3" fill="#3a7bd5" stroke="#fff" stroke-width="2" transform="rotate(14 20 -38)"/></g><circle cx="0" cy="-88" r="33" fill="url(#${o.sk})"/><path d="M-34 -90 C-35 -120 -12 -126 0 -126 C16 -126 35 -118 34 -90 C27 -106 10 -110 0 -108 C-12 -110 -28 -104 -34 -90Z" fill="${o.hc}"/><ellipse cx="-11" cy="-84" rx="4" ry="5.5" fill="#1b1b24"/><ellipse cx="11" cy="-84" rx="4" ry="5.5" fill="#1b1b24"/><path d="M-6 -72 Q0 -66 6 -72" stroke="#5a2a22" stroke-width="2.6" fill="none" stroke-linecap="round"/><g class="x-cap"><path d="M-40 -114 L0 -130 L40 -114 L0 -100Z" fill="#23305a"/><rect x="-21" y="-114" width="42" height="12" rx="4" fill="#1b2546"/><path d="M29 -116 L33 -98" stroke="#ffc83d" stroke-width="2.6"/></g></svg>`}
+function Mini(L,x,y,i,sd){const r=R(sd*131+i*17+3),m={sk:MSK[Math.floor(r()*4)],hc:MHC[Math.floor(r()*5)],sh:MSH[Math.floor(r()*7)]};const e=$('div','mn',L,mini(m));const o={el:e,x,y};o.set=(X,Y)=>{o.x=X;o.y=Y;e.style.transform=`translate(${X-26}px,${Y-82}px)`};o.set(x,y);return o}
+function moveMini(m,x,y,d,dl,e='cubic-bezier(.4,.1,.3,1)'){const a=`translate(${m.x-26}px,${m.y-82}px)`,b=`translate(${x-26}px,${y-82}px)`;m.x=x;m.y=y;return A(m.el,[{transform:a},{transform:b}],d,{delay:dl,easing:e})}
+const PLANE='<svg viewBox="0 0 100 60" width="110" height="66"><polygon points="4,6 100,30 34,30" fill="#fff"/><polygon points="4,54 100,30 34,30" fill="#ebe6dc"/><polygon points="34,30 100,30 20,46" fill="#cfc8ba"/></svg>';
+function spline(P,n=26){const q=[];for(let s=0;s<P.length-1;s++)for(let t=0;t<1;t+=1/n){const a=P[Math.max(s-1,0)],b=P[s],c=P[s+1],d=P[Math.min(s+2,P.length-1)];q.push([0,1].map(k=>.5*(2*b[k]+(-a[k]+c[k])*t+(2*a[k]-5*b[k]+4*c[k]-d[k])*t*t+(-a[k]+3*b[k]-3*c[k]+d[k])*t*t*t)))}q.push(P[P.length-1]);return q}
+function flyPath(el,P,d,e=E.io){const q=spline(P),N=q.length-1;let pa=0;return tw(d,p=>{const f=p*N,i=Math.min(Math.floor(f),N-1),u=f-i,x=lerp(q[i][0],q[i+1][0],u),y=lerp(q[i][1],q[i+1][1],u);const j=Math.min(i+1,N),k=Math.max(j-1,0);let a=Math.atan2(q[j][1]-q[k][1],q[j][0]-q[k][0])*57.3;if(q[j][0]===q[k][0]&&q[j][1]===q[k][1])a=pa;a+=360*Math.round((pa-a)/360);pa=a;el.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%) rotate(${a}deg)`},e)}
+const DART='polygon(0% 0%,50% 25%,100% 50%,50% 75%,0% 100%,25% 50%)',HALF='polygon(0% 0%,75% 12%,100% 50%,75% 88%,0% 100%,12% 50%)',RECT='polygon(0% 0%,100% 0%,100% 50%,100% 100%,0% 100%,0% 50%)';
+function unfold(el,dl=0){A(el,[{clipPath:DART,transform:'perspective(900px) scale(.24) rotate(-6deg)',background:'#efeadf'},{clipPath:HALF,transform:'perspective(900px) scale(.62) rotateY(-50deg)',background:'#f8f4ec',offset:.55},{clipPath:RECT,transform:'perspective(900px) scale(1) rotateY(0)',background:'#fffdf7'}],1150,{delay:dl,easing:'cubic-bezier(.3,.05,.2,1)'});
+ const ct=el.querySelector('.ct'),pn=el.parentNode.querySelector('.pin');if(ct)A(ct,[{opacity:0},{opacity:1}],450,{delay:dl+850});if(pn)pop(pn,dl+1050,400)}
+const PL=a=>'polygon('+a.map(q=>q[0]+'% '+q[1]+'%').join(',')+')';
+const bl=(m,j)=>[...Array(12)].map((_,k)=>{const t=k*Math.PI/6,r=m*[.94,1.06,.88,1.04,.96,1.08,.9,1.02,.98,1.06,.86,1][(k+j)%12]*.5;return[50+r*Math.cos(t),50+r*Math.sin(t)]});
+const P0=PL([[-12,-10],[22,-10],[55,-10],[112,-10],[112,30],[112,70],[112,125],[66,125],[33,125],[-12,125],[-12,80],[-12,35]]);
+const P1=PL([[8,4],[30,-6],[60,8],[94,-2],[104,30],[90,62],[100,100],[68,90],[35,106],[4,96],[-4,64],[10,30]]);
+
+// ================= world art =================
+const sv=(w,h,inner,cls='')=>`<svg class="${cls}" xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" overflow="visible">${inner}</svg>`;
+function cloud(w){const h=w*.42;return sv(w,h,`<g fill="url(#gCl)"><ellipse cx="${w*.5}" cy="${h*.62}" rx="${w*.48}" ry="${h*.34}"/><ellipse cx="${w*.34}" cy="${h*.48}" rx="${w*.2}" ry="${h*.34}"/><ellipse cx="${w*.58}" cy="${h*.36}" rx="${w*.24}" ry="${h*.36}"/><ellipse cx="${w*.76}" cy="${h*.54}" rx="${w*.16}" ry="${h*.26}"/></g>`)}
+function tree(x,y,s=1,c=0){const g=c%2?'gT2':'gT1';return`<g transform="translate(${x},${y}) scale(${s})"><ellipse cx="0" cy="4" rx="64" ry="13" fill="#0a1230" opacity=".14"/><path d="M-10 2 L-6 -92 L6 -92 L10 2Z" fill="#7a5234"/><circle cx="0" cy="-132" r="68" fill="url(#${g})"/><circle cx="-46" cy="-98" r="44" fill="url(#${g})"/><circle cx="48" cy="-100" r="46" fill="url(#${g})"/><circle cx="-14" cy="-160" r="42" fill="url(#${g})"/></g>`}
+function bush(x,y,s=1){return`<g transform="translate(${x},${y}) scale(${s})"><ellipse cx="0" cy="2" rx="52" ry="9" fill="#0a1230" opacity=".12"/><circle cx="-26" cy="-18" r="24" fill="url(#gT2)"/><circle cx="4" cy="-26" r="30" fill="url(#gT1)"/><circle cx="32" cy="-16" r="22" fill="url(#gT2)"/></g>`}
+function lamp(x){return`<rect x="${x-4}" y="560" width="8" height="160" rx="3" fill="#2d3a45"/><rect x="${x-14}" y="712" width="28" height="10" rx="3" fill="#2d3a45"/><circle cx="${x}" cy="550" r="17" fill="#fff6c8" stroke="#2d3a45" stroke-width="5"/>`}
+function treeline(sd){const r=R(sd);let s='';for(let i=0;i<24;i++){const x=r()*1640-20,rr=15+r()*20,y=556-r()*8;s+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${rr.toFixed(0)}" fill="${r()<.5?'#78b26c':'#6aa763'}"/><circle cx="${(x-rr*.3).toFixed(0)}" cy="${(y-rr*.35).toFixed(0)}" r="${(rr*.55).toFixed(0)}" fill="#97cb85" opacity=".75"/>`}return s}
+function tufts(sd){const r=R(sd+50);let s='';for(let i=0;i<26;i++){const x=r()*1600,y=r()<.6?580+r()*120:836+r()*50;s+=`<path d="M${x.toFixed(0)} ${y.toFixed(0)} q3 -14 6 0 q3 -16 6 0 q3 -12 6 0" stroke="#3f8f3c" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>`;if(r()<.3)s+=`<circle cx="${(x+20).toFixed(0)}" cy="${(y-4).toFixed(0)}" r="5" fill="${['#fff','#ffd84a','#ff8fb0'][Math.floor(r()*3)]}"/>`}return s}
+function ground(){let s=`<rect y="558" width="1600" height="342" fill="url(#gL)"/><rect y="716" width="1600" height="106" fill="url(#gS)"/><rect y="714" width="1600" height="6" fill="#c9b48a"/><rect y="818" width="1600" height="7" fill="#b9a27a" opacity=".7"/>`;for(let i=0;i<8;i++)s+=`<rect x="${i*200+98}" y="722" width="3" height="96" fill="#cdb88f" opacity=".8"/>`;return s+`<rect y="825" width="1600" height="75" fill="url(#gF)"/>`}
+function signTxt(x,y,t,sz=18,c='#fff',ls=3){return`<text x="${x}" y="${y}" font-family="Fredoka,Arial Rounded MT Bold,Arial" font-weight="700" font-size="${sz}" letter-spacing="${ls}" text-anchor="middle" fill="${c}">${t}</text>`}
+function hall(c,sc=1){const L=-370;let s=`<g transform="translate(${c},0) scale(${sc}) translate(0,${(1-sc)*612/sc})"><rect x="${L-12}" y="346" width="764" height="16" fill="#8a3b2b"/><rect x="${L}" y="362" width="740" height="250" fill="url(#gBr)"/>`;
+ for(let r=0;r<2;r++)for(let k=0;k<3;k++)[L+30+k*70,170+k*70].forEach(x=>{s+=`<rect x="${x}" y="${392+r*104}" width="42" height="64" rx="4" fill="#f6e7b4" stroke="#f4efe6" stroke-width="5"/><path d="M${x+21} ${392+r*104}v64" stroke="#f4efe6" stroke-width="3"/>`});
+ s+=`<rect x="-36" y="150" width="72" height="122" fill="url(#gSt)"/><circle cx="0" cy="196" r="25" fill="#fff" stroke="#8a3b2b" stroke-width="4"/><path d="M0 196V180M0 196L11 202" stroke="#8a3b2b" stroke-width="3.5" stroke-linecap="round"/><rect x="-46" y="142" width="92" height="10" fill="#8a3b2b"/><polygon points="-42,144 42,144 0,62" fill="#3f6f96"/><path d="M0 62V30" stroke="#555" stroke-width="3"/><path d="M0 30h34l-8 8 8 8h-34z" fill="#e8553d"/>`;
+ s+=`<polygon points="-170,346 170,346 0,262" fill="#f4efe6" stroke="#d9d0bd" stroke-width="3"/><polygon points="-122,338 122,338 0,284" fill="#e6dccb"/><rect x="-172" y="344" width="344" height="30" fill="#f4efe6"/>${signTxt(0,366,'STATE UNIVERSITY',17,'#8a3b2b',4)}<rect x="-165" y="374" width="330" height="238" fill="#5a2a22"/>`;
+ for(let k=0;k<7;k++)s+=`<rect x="${-158+k*50}" y="374" width="22" height="238" fill="#f4efe6" stroke="#d9d0bd" stroke-width="2"/>`;
+ s+=`<rect x="-185" y="612" width="370" height="11" fill="#e9e1d1"/><rect x="-200" y="623" width="400" height="11" fill="#ddd4c1"/></g>`;return s}
+function bench(x){return`<g transform="translate(${x},0)"><rect x="-70" y="676" width="140" height="10" rx="4" fill="url(#gWd)"/><rect x="-70" y="652" width="140" height="10" rx="4" fill="url(#gWd)"/><rect x="-60" y="686" width="8" height="30" fill="#2d3a45"/><rect x="52" y="686" width="8" height="30" fill="#2d3a45"/></g>`}
+function house(x,c,roof){return`<g transform="translate(${x},0)"><rect x="0" y="470" width="220" height="170" fill="${c}"/><polygon points="-14,474 110,392 234,474" fill="${roof}"/><rect x="88" y="560" width="46" height="80" rx="4" fill="#6b4429"/><rect x="22" y="510" width="48" height="42" rx="4" fill="#f6e7b4" stroke="#fff" stroke-width="5"/><rect x="150" y="510" width="48" height="42" rx="4" fill="#f6e7b4" stroke="#fff" stroke-width="5"/></g>`}
+function hillsPath(W,base,amp,sd){const r=R(sd),ph=[r()*6,r()*6,r()*6];let d=`M-200 1400 L-200 ${base}`;for(let x=-200;x<=W;x+=60){const y=base-amp*(.55+.3*Math.sin(x/640+ph[0])+.18*Math.sin(x/250+ph[1])+.08*Math.sin(x/93+ph[2]));d+=` L${x} ${y.toFixed(1)}`}return d+` L${W} 1400Z`}
+// trash can (two layers so paper balls can drop inside)
+const CANX=640,CANY=694;
+const canBack=`<svg width="160" height="150" viewBox="-80 -20 160 150" overflow="visible"><ellipse cx="0" cy="0" rx="62" ry="15" fill="#17181c"/></svg>`;
+const canFront=`<svg width="160" height="150" viewBox="-80 -20 160 150" overflow="visible"><ellipse cx="0" cy="126" rx="70" ry="12" fill="#0a1230" opacity=".2"/><path d="M-62 0 A62 15 0 0 0 62 0 L52 118 Q0 132 -52 118Z" fill="url(#gMt)"/><path d="M-30 22 L-26 120 M0 24 V126 M30 22 L26 120" stroke="#0002" stroke-width="5"/><path d="M-62 0 A62 15 0 0 0 62 0" fill="none" stroke="#d3d7dd" stroke-width="9" stroke-linecap="round"/><path d="M-62 0 A62 15 0 0 1 62 0" fill="none" stroke="#b9bdc4" stroke-width="7"/></svg>`;
+
+const ZONES=[
+ // 0 campus quad
+ ()=>treeline(1)+ground()+tufts(1)+hall(1150)+tree(748,630,.72,1)+tree(1578,660,1,1)+bush(470,708)+lamp(110)+lamp(1012)+bench(860),
+ // 1 college row
+ ()=>treeline(2)+ground()+tufts(2)+tree(36,640,.8,1)+tree(1586,648,.85)+bush(440,708,.7)+bush(1160,708,.7)+lamp(810)+`<g transform="translate(60,0)"><rect x="-4" y="600" width="8" height="118" fill="#2d3a45"/><rect x="-70" y="600" width="140" height="34" rx="6" fill="#2f7a4f"/>${signTxt(0,624,'COLLEGE ROW',17)}</g>`,
+ // 2 fork in the road
+ ()=>treeline(3)+ground()+tufts(3)+`<polygon points="560,716 780,716 360,560 318,560" fill="#e6d4a9"/>`+hall(338,.17)+tree(930,640,.75)+`<g transform="translate(660,0)"><rect x="-6" y="560" width="12" height="160" rx="4" fill="url(#gWd)"/><polygon points="-120,566 -6,566 -6,604 -120,604 -140,585" fill="#2f7a4f"/>${signTxt(-68,592,'COLLEGE',18)}<polygon points="6,612 120,612 140,631 120,650 6,650" fill="#e8553d"/>${signTxt(66,638,'WORK',18)}</g>`
+  +`<g><rect x="1060" y="380" width="500" height="260" fill="#f3e3c3"/><rect x="1046" y="362" width="528" height="26" rx="6" fill="#6b4429"/><rect x="1110" y="300" width="400" height="56" rx="10" fill="#23305a"/>${signTxt(1310,338,'MAIN ST. HARDWARE',26)}`+[0,1,2,3,4,5,6,7,8,9].map(i=>`<path d="M${1060+i*50} 400 h50 v34 q-25 16 -50 0z" fill="${i%2?'#fff':'#e8553d'}"/>`).join('')+`<rect x="1100" y="470" width="220" height="150" rx="6" fill="url(#gGl)" stroke="#fff" stroke-width="6"/><rect x="1130" y="500" width="120" height="44" rx="6" fill="#ffc83d"/>${signTxt(1190,529,'NOW HIRING',16,'#23305a',1)}<rect x="1380" y="480" width="110" height="160" rx="6" fill="#6b4429"/><circle cx="1470" cy="565" r="6" fill="#ffc83d"/></g>`,
+ // 3 class gate
+ ()=>treeline(4)+ground()+tufts(4)+`<g stroke="#2d3a45" stroke-width="5">`+[...Array(30)].map((_,i)=>`<path d="M${440+i*40} 600 v-46"/>`).join('')+`<path d="M430 572 H1600 M430 596 H1600"/></g>`+`<g><rect x="96" y="380" width="56" height="340" fill="url(#gBr)"/><rect x="88" y="364" width="72" height="22" fill="#8a3b2b"/><rect x="372" y="380" width="56" height="340" fill="url(#gBr)"/><rect x="364" y="364" width="72" height="22" fill="#8a3b2b"/><path d="M152 470 Q262 350 372 470" stroke="#2d3a45" stroke-width="10" fill="none"/><rect x="150" y="300" width="224" height="58" rx="10" fill="#23305a"/>${signTxt(262,324,'CLASS OF',16,'#ffc83d')}${signTxt(262,348,'FALL 2019',22)}</g>`+tree(24,660,.8),
+ // 4 track
+ ()=>treeline(5)+ground()+tufts(5)+`<g>`+[0,1,2,3].map(i=>`<rect x="${260+i*16}" y="${470+i*22}" width="${1080-i*32}" height="22" fill="${['#c3c8cf','#aeb4bd','#c3c8cf','#aeb4bd'][i]}"/>`).join('')+[...Array(60)].map((_,i)=>{const r=R(i+9);return`<circle cx="${(290+i*17.5).toFixed(0)}" cy="${(462+Math.floor(r()*4)*22).toFixed(0)}" r="7" fill="${MSH[i%7]}"/>`}).join('')+`</g><rect y="568" width="1600" height="146" fill="url(#gTr)"/><g stroke="#fff" stroke-width="4" opacity=".85"><path d="M0 570 H1600 M0 617 H1600 M0 664 H1600 M0 711 H1600"/><path d="M182 570 V711" stroke-width="7"/></g>`+[...Array(18)].map((_,i)=>`<rect x="${1376+(i%2)*14}" y="${570+Math.floor(i/2)*15.7}" width="14" height="15.7" fill="${(i+Math.floor(i/2))%2?'#fff':'#1b1b24'}"/>`).join(''),
+ // 5 commencement stage
+ ()=>treeline(6)+ground()+tufts(6)+`<rect x="230" y="290" width="1240" height="310" rx="8" fill="url(#gCt)"/>`+[...Array(12)].map((_,i)=>`<path d="M${280+i*100} 296 V598" stroke="#ffffff10" stroke-width="30"/>`).join('')+`<rect x="230" y="290" width="1240" height="16" fill="#ffc83d"/><rect x="560" y="318" width="580" height="62" rx="12" fill="#ffc83d"/>${signTxt(850,361,'COMMENCEMENT',38,'#23305a',6)}<rect x="200" y="596" width="1300" height="18" fill="#e8c48e"/><rect x="200" y="614" width="1300" height="88" fill="url(#gWd)"/>`+[0,1,2,3,4,5].map(i=>`<rect x="${226+i*216}" y="628" width="190" height="60" rx="6" fill="#00000018"/>`).join('')+`<g transform="translate(1530,0)"><rect x="-3" y="420" width="6" height="296" fill="#999"/><path d="M3 424 h70 v44 h-70z" fill="#e8553d"/></g><g transform="translate(170,0)"><rect x="-3" y="420" width="6" height="296" fill="#999"/><path d="M-3 424 h-70 v44 h70z" fill="#23305a"/></g>`,
+ // 6 hall of majors
+ ()=>treeline(7)+ground()+tufts(7)+`<rect x="70" y="236" width="1460" height="20" fill="#c9b994"/><rect x="80" y="252" width="1440" height="390" fill="url(#gSt)"/><polygon points="660,236 940,236 800,170" fill="#f4efe6" stroke="#d9cdb2" stroke-width="3"/>`+[175,565,1035,1425].map(x=>`<rect x="${x-40}" y="290" width="80" height="90" rx="40" fill="url(#gGl)" stroke="#fff" stroke-width="6"/><rect x="${x-40}" y="420" width="80" height="120" rx="6" fill="url(#gGl)" stroke="#fff" stroke-width="6"/>`).join('')
+  +[[330,'STEM','#3a7bd5'],[800,'NURSING &amp; MEDICINE','#2bb3a3'],[1270,'LAW','#8a5cc2']].map(([c,t,col])=>`<rect x="${c-100}" y="392" width="200" height="250" rx="10" fill="#e3d6b8"/><rect x="${c-86}" y="404" width="172" height="238" rx="6" fill="url(#gGw)"/><rect x="${c-118}" y="334" width="236" height="48" rx="10" fill="${col}"/>${signTxt(c,366,t,t.length>16?14:t.length>8?17:22,'#fff',t.length>16?1:3)}`).join(''),
+ // 7 leaving campus street
+ ()=>treeline(8)+ground()+tufts(8)+house(640,'#f3d6a4','#c55a40')+house(900,'#bfe0e6','#3f6f96')+house(1160,'#f2c6c6','#8a3b2b')+house(1420,'#d8e8c2','#4f7d3a')+`<g><rect x="80" y="430" width="16" height="290" fill="#2d3a45"/><rect x="500" y="430" width="16" height="290" fill="#2d3a45"/><rect x="70" y="400" width="456" height="80" rx="12" fill="#23305a"/>${signTxt(298,432,'YOU ARE NOW LEAVING CAMPUS',20,'#fff',2)}${signTxt(298,462,'GOOD LUCK!',22,'#ffc83d',4)}</g><g transform="translate(780,0)"><rect x="-5" y="640" width="10" height="80" fill="#5a3a20"/><path d="M-36 600 h72 v50 h-72z" fill="#3a7bd5"/><path d="M-36 600 q36 -38 72 0" fill="#3a7bd5"/><rect x="34" y="584" width="6" height="40" fill="#e8553d"/><path d="M40 584 h20 v14 h-20z" fill="#e8553d"/></g>`,
+ // 8 apartment block
+ ()=>treeline(9)+ground()+tufts(9)+`<rect x="610" y="30" width="880" height="612" rx="6" fill="#e8d2b0"/><rect x="600" y="20" width="900" height="22" rx="6" fill="#b8865a"/>`+[...Array(11)].map((_,i)=>`<path d="M610 ${42+i*58} H1490" stroke="#d5bb92" stroke-width="2"/>`).join('')+`<rect x="1000" y="584" width="100" height="58" rx="6" fill="#6b4429"/>`+tree(110,650,.85,1)+tree(520,660,.7),
+ // 9 jobs street
+ ()=>treeline(10)+ground()+tufts(10)+`<rect x="90" y="120" width="380" height="520" fill="url(#gGl)"/>`+[...Array(7)].map((_,i)=>`<path d="M${90+i*54} 120 V640" stroke="#ffffff70" stroke-width="3"/>`).join('')+[...Array(9)].map((_,i)=>`<path d="M90 ${180+i*52} H470" stroke="#ffffff70" stroke-width="3"/>`).join('')+`<rect x="80" y="104" width="400" height="22" fill="#5a6f8c"/><rect x="230" y="560" width="100" height="80" fill="#3c4f6e"/>`
+  +`<rect x="1110" y="380" width="400" height="262" fill="#fbe9d0"/><rect x="1096" y="364" width="428" height="24" rx="6" fill="#6b4429"/>`+[...Array(8)].map((_,i)=>`<path d="M${1110+i*50} 396 h50 v34 q-25 16 -50 0z" fill="${i%2?'#fff':'#2bb3a3'}"/>`).join('')+`<rect x="1150" y="460" width="200" height="150" rx="8" fill="url(#gGl)" stroke="#fff" stroke-width="6"/><rect x="1390" y="470" width="90" height="172" rx="6" fill="#6b4429"/><rect x="1180" y="306" width="260" height="50" rx="12" fill="#2bb3a3"/>${signTxt(1310,341,'CORNER CAFE',24)}`,
+ // 10 earnings staircase
+ ()=>treeline(11)+ground()+tufts(11)+STEPS.map((s,i)=>{const x=200+i*240;return`<polygon points="${x},${s.y} ${x+240},${s.y} ${x+262},${s.y-20} ${x+22},${s.y-20}" fill="#f0e6d2"/><rect x="${x}" y="${s.y}" width="240" height="${822-s.y}" fill="url(#gSt)"/><rect x="${x}" y="${s.y}" width="240" height="${822-s.y}" fill="url(#shd)" opacity=".5"/><path d="M${x+240} ${s.y} L${x+262} ${s.y-20} V${822-20} L${x+240} 822Z" fill="#c9b994"/>`}).join(''),
+ // 11 alternatives
+ ()=>treeline(12)+ground()+tufts(12)+`<path d="M260 210 Q700 250 1600 230" stroke="#2d3a45" stroke-width="3" fill="none"/><path d="M260 236 Q700 276 1600 256" stroke="#2d3a45" stroke-width="3" fill="none"/><rect x="250" y="180" width="20" height="540" fill="url(#gWd)"/><rect x="200" y="200" width="120" height="14" rx="4" fill="#6b4429"/>`+[0,1,2,3,4,5,6].map(i=>`<rect x="${i%2?270:238}" y="${300+i*55}" width="14" height="6" fill="#555"/>`).join('')
+  +`<rect x="560" y="400" width="420" height="242" fill="#f4fbfb"/><rect x="546" y="384" width="448" height="22" rx="6" fill="#2bb3a3"/><rect x="600" y="460" width="150" height="110" rx="6" fill="url(#gGl)" stroke="#fff" stroke-width="5"/><rect x="820" y="470" width="110" height="172" rx="6" fill="#2bb3a3"/><g transform="translate(770,320)"><circle r="54" fill="#fff" stroke="#2bb3a3" stroke-width="7"/><path d="M-26 -22 Q-30 -40 -12 -38 Q0 -32 12 -38 Q30 -40 26 -22 Q22 0 18 26 Q14 34 8 20 Q4 8 0 8 Q-4 8 -8 20 Q-14 34 -18 26 Q-22 0 -26 -22Z" fill="#2bb3a3"/></g><rect x="610" y="358" width="0" height="0"/>`
+  +`<g transform="translate(1130,0)"><rect x="-4" y="560" width="8" height="160" fill="#2d3a45"/><circle cx="0" cy="552" r="26" fill="#e8553d" stroke="#fff" stroke-width="5"/>${signTxt(0,560,'BUS',16)}</g>`+hall(1480,.14),
+ // 12 break-even field
+ ()=>treeline(13)+ground()+tufts(13)+tree(1520,660,.9)+bush(980,712,.8)+`<g stroke="#a0784e" stroke-width="7">`+[...Array(14)].map((_,i)=>`<path d="M${520+i*60} 690 v-60"/>`).join('')+`<path d="M510 648 H1300 M510 676 H1300"/></g>`,
+ // 13 signpost
+ ()=>treeline(14)+ground()+tufts(14)+tree(120,660,.95,1)+tree(1560,660,.85)+bush(400,712,.8)+`<rect x="808" y="120" width="24" height="600" rx="6" fill="url(#gWd)"/><circle cx="820" cy="120" r="20" fill="#8d5a32"/>`,
+ // 14 sunset hill
+ ()=>treeline(15)+ground()+tufts(15)+hall(1400,.3)+tree(80,650,.95)+tree(280,640,.7,1)+bush(1100,712,.8)+lamp(980)
+];
+const STEPS=[{n:'High school diploma',p:966},{n:'Some college, no degree',p:1062},{n:'Associate degree',p:1135},{n:"Bachelor's degree",p:1578},{n:"Master's degree",p:1876}].map(s=>({...s,y:Math.round(760-(s.p-800)*.35)}));
+
+function buildWorld(){
+ zones.innerHTML=ZONES.map((f,k)=>`<svg class="zn" style="left:${k*ZW}px" width="1600" height="900" viewBox="0 0 1600 900" overflow="visible">${f()}</svg>`).join('');
+ const FW=ZONES.length*ZW*.35+2600;
+ let fc='';const r=R(77);for(let x=-200;x<FW;x+=380+r()*300)fc+=`<div style="position:absolute;left:${x.toFixed(0)}px;top:${(40+r()*200).toFixed(0)}px;opacity:.95">${cloud(150+r()*170)}</div>`;
+ far.innerHTML=fc+sv(FW,1400,`<path d="${hillsPath(FW,500,140,5)}" fill="url(#gH1)"/><path d="${hillsPath(FW,566,74,9)}" fill="url(#gH2)"/>`);
+ // sky-altitude clouds above the quad
+ const sk=[[-180,-1820,320],[420,-1700,240],[1180,-1760,300],[60,-1400,200],[1380,-1380,260],[-60,-980,280],[1300,-980,220],[560,-560,300],[1100,-300,240],[-100,-260,260],[300,-1160,160]];
+ back.innerHTML=sk.map(([x,y,w])=>`<div style="left:${x}px;top:${y}px">${cloud(w)}</div>`).join('')+`<div id="canB" style="left:${CANX-80}px;top:${CANY-20}px;transform-origin:50% 95%">${canBack}</div>`;
+ front.innerHTML=[[-140,-720,380],[1240,-700,420],[420,-380,360],[980,-150,300],[200,-1980,500]].map(([x,y,w])=>`<div class="fcl" style="left:${x}px;top:${y}px">${cloud(w)}</div>`).join('')+`<div id="canF" style="left:${CANX-80}px;top:${CANY-20}px;transform-origin:50% 95%">${canFront}</div>`;
+}
+function canHit(){['canB','canF'].forEach(id=>A(document.getElementById(id),[{transform:'none'},{transform:'scale(1.05,.92)'},{transform:'rotate(-3deg) scale(.98,1.03)'},{transform:'rotate(2deg)'},{transform:'none'}],520,{easing:'ease-out',fill:'none'}))}
+
+// ================= slide content helpers =================
+const Z=k=>k*ZW;
+const CARDS=[['The Promise','Get a degree, get a good job, build a stable life.'],['The Reality','Costs and prices have outrun wages and purchasing power.'],['The Question','Is the degree still worth the time and the price tag?']],CC=[[330,-1060],[800,-1078],[1270,-1060]];
+const CROWN=sv(190,170,'<circle cx="95" cy="82" r="70" fill="url(#gT1)"/><circle cx="45" cy="108" r="46" fill="url(#gT2)"/><circle cx="146" cy="108" r="46" fill="url(#gT2)"/><circle cx="84" cy="46" r="42" fill="url(#gT1)"/>');
+const COINS=sv(80,108,[...Array(7)].map((_,k)=>`<ellipse cx="40" cy="${98-k*13}" rx="34" ry="11" fill="#c9861a"/><ellipse cx="40" cy="${94-k*13}" rx="34" ry="11" fill="#ffc83d" stroke="#b9781a" stroke-width="2"/>`).join(''));
+const RAIN=sv(46,40,'<g fill="#9aa8bd"><circle cx="14" cy="14" r="9"/><circle cx="26" cy="10" r="11"/><circle cx="35" cy="16" r="8"/><rect x="8" y="14" width="32" height="10" rx="5"/></g><path d="M14 28 l-3 8 M24 28 l-3 8 M34 28 l-3 8" stroke="#3a7bd5" stroke-width="3" stroke-linecap="round"/>');
+const BUS=sv(330,150,`<rect x="6" y="10" width="318" height="118" rx="22" fill="#ffc83d"/><rect x="6" y="10" width="318" height="118" rx="22" fill="url(#shd)"/><rect x="6" y="96" width="318" height="14" fill="#e8553d"/>`+[0,1,2,3].map(i=>`<rect x="${26+i*62}" y="26" width="50" height="40" rx="6" fill="url(#gGl)"/>`).join('')+`<rect x="276" y="26" width="38" height="66" rx="6" fill="url(#gGl)"/><rect x="30" y="74" width="230" height="20" rx="5" fill="#23305a"/>${signTxt(145,89,'TRANSFER EXPRESS',14,'#fff',2)}<circle cx="70" cy="130" r="20" fill="#2b2b33"/><circle cx="70" cy="130" r="8" fill="#aaa"/><circle cx="260" cy="130" r="20" fill="#2b2b33"/><circle cx="260" cy="130" r="8" fill="#aaa"/>`);
+const PACK=sv(230,210,`<rect x="10" y="20" width="210" height="180" rx="40" fill="#7b4fb0"/><rect x="10" y="20" width="210" height="180" rx="40" fill="url(#shd)"/><rect x="62" y="2" width="106" height="40" rx="20" fill="none" stroke="#5c3a8a" stroke-width="14"/><rect x="38" y="88" width="154" height="74" rx="14" fill="#5c3a8a"/>${signTxt(115,138,'DEBT',38,'#ffc83d',5)}`);
+const ROW=[{k:'cc',n:'Public two-year',s:'in-district',p:4150,x:150,w:240},{k:'in',n:'Public four-year',s:'in-state',p:11950,x:470,w:290,net:2300},{k:'out',n:'Public four-year',s:'out-of-state',p:31880,x:830,w:290},{k:'pr',n:'Private nonprofit',s:'four-year',p:45000,x:1180,w:360,net:16910}];
+const bh=p=>Math.round(76+p/45000*400),BASE=612;
+function bld(k,w,h){let s='';
+ if(k==='cc'){s+=`<rect x="0" y="18" width="${w}" height="${h-18}" fill="#ece6da"/><rect x="-8" y="6" width="${w+16}" height="16" rx="4" fill="#8f9aa6"/><rect x="14" y="30" width="${w-28}" height="${h-72}" rx="4" fill="url(#gGl)"/>`;for(let x=64;x<w-20;x+=50)s+=`<path d="M${x} 30 v${h-72}" stroke="#fff" stroke-width="4"/>`;s+=`<rect x="${w/2-26}" y="${h-42}" width="52" height="42" fill="#3c4f6e"/>`}
+ else if(k==='in'||k==='out'){const ex=k==='out'?h-bh(11950):0;s+=`<polygon points="-8,36 ${w/2},0 ${w+8},36" fill="#f4efe6" stroke="#d9d0bd" stroke-width="3"/>`;
+  if(ex>0){s+=`<rect x="0" y="34" width="${w}" height="${ex}" fill="url(#gBr2)"/>`;for(let y=54;y<ex;y+=46)for(let x=26;x<w-36;x+=58)s+=`<rect x="${x}" y="${y}" width="30" height="26" rx="3" fill="#ffe7a8" opacity=".9"/>`;s+=`<rect x="${w/2-112}" y="${34+ex/2-21}" width="224" height="40" rx="8" fill="#23305a"/>${signTxt(w/2,34+ex/2+5,'OUT-OF-STATE FLOORS',15,'#ffc83d',1)}`}
+  const by=34+ex;s+=`<rect x="0" y="${by}" width="${w}" height="${h-by}" fill="url(#gBr)"/>`;for(let y=by+16;y<h-62;y+=46)for(let x=26;x<w-36;x+=58)s+=`<rect x="${x}" y="${y}" width="30" height="28" rx="3" fill="#f6e7b4" stroke="#f4efe6" stroke-width="3"/>`;s+=`<rect x="${w/2-28}" y="${h-54}" width="56" height="54" rx="4" fill="#5a2a22"/>`}
+ else{s+=`<rect x="50" y="92" width="${w-100}" height="${h-92}" fill="url(#gSt)"/><polygon points="40,98 ${w/2},40 ${w-40},98" fill="#a94a3a"/>`;
+  [0,w-70].forEach(x=>{s+=`<rect x="${x}" y="70" width="70" height="${h-70}" fill="url(#gSt)"/><rect x="${x}" y="70" width="70" height="${h-70}" fill="url(#shd)" opacity=".6"/><polygon points="${x-8},76 ${x+35},0 ${x+78},76" fill="#3f6f96"/>`;for(let y=110;y<h-70;y+=82)s+=`<path d="M${x+22} ${y+44} v-26 a13 13 0 0 1 26 0 v26z" fill="#23305a"/>`});
+  for(let y=128;y<h-96;y+=76)for(let x=86;x<w-110;x+=54)s+=`<path d="M${x} ${y+46} v-32 a14 14 0 0 1 28 0 v32z" fill="#f6e7b4" stroke="#fff" stroke-width="3"/>`;
+  s+=`<path d="M${w/2-38} ${h} v-64 a38 38 0 0 1 76 0 v64z" fill="#5a2a22"/><path d="M58 ${h} q24 -90 -4 -180 q36 50 24 180z" fill="#4f9f43" opacity=".85"/><path d="M${w-58} ${h} q-24 -70 4 -140 q-36 40 -24 140z" fill="#4f9f43" opacity=".85"/>`}
+ return sv(w,h,s)}
+function row(L,ox){return ROW.map(b=>{const h=bh(b.p),d=$('div','',L,bld(b.k,b.w,h));at(d,ox+b.x,BASE-h);const lb=C(L,ox+b.x+b.w/2,BASE+10,`${b.n}<span>${b.s}</span>`,'lbl');const tg=C(L,ox+b.x+b.w/2,BASE-h-72,`$${fmt(b.p)}`,'tag');return{b,d,h,lb,tg}})}
+const LEAF=sv(58,34,'<path d="M2 17 Q22 -6 56 17 Q22 40 2 17Z" fill="#5aae4c"/><path d="M2 17 Q22 -6 56 17" fill="#7cc95e"/><path d="M4 17 H50" stroke="#3b8a3b" stroke-width="2"/>');
+function bigTree(L){const t=$('div','',L);t.style.zIndex=1;
+ const tk=$('div','',t,sv(120,300,'<path d="M44 300 L50 40 Q60 20 70 40 L76 300Z" fill="#7a5234"/><path d="M58 120 L20 70 M62 150 L100 96" stroke="#7a5234" stroke-width="14" stroke-linecap="round"/><ellipse cx="60" cy="296" rx="90" ry="14" fill="#0a1230" opacity=".14"/>'));tk.style.position='absolute';at(tk,160,412);
+ const cr=$('div','',t,sv(440,360,'<circle cx="220" cy="190" r="150" fill="url(#gT1)"/><circle cx="110" cy="240" r="96" fill="url(#gT2)"/><circle cx="330" cy="236" r="100" fill="url(#gT2)"/><circle cx="190" cy="100" r="92" fill="url(#gT1)"/><circle cx="300" cy="120" r="70" fill="url(#gT1)"/><circle cx="90" cy="150" r="60" fill="url(#gT2)"/>'));cr.style.position='absolute';at(cr,0,136);cr.style.transformOrigin='50% 95%';
+ L.__tree={t,cr};return L.__tree}
+function growTree(L,tx,ty,cx,cy,t0,keepTrunk=true){const th=ty-cy;
+ const tr=$('div','trunk',L);at(tr,tx,cy);tr.style.height=th+'px';tr.style.zIndex=1;A(tr,[{transform:'scaleY(0)'},{transform:'scaleY(1)'}],700,{delay:t0,easing:'cubic-bezier(.2,.8,.3,1)'});
+ const md=$('div','',L,sv(120,26,'<ellipse cx="60" cy="13" rx="58" ry="11" fill="#6b4429"/>'));at(md,tx-60,ty-13);A(md,[{transform:'scaleX(0)',opacity:1},{transform:'scaleX(1)',opacity:1,offset:.3},{transform:'scaleX(1)',opacity:1,offset:.8},{transform:'scaleX(.4)',opacity:0}],1600,{delay:t0});
+ const cr=$('div','crown',L,CROWN);at(cr,tx,cy);cr.style.zIndex=2;A(cr,[{transform:`translateY(${th}px) scale(.1)`,opacity:1},{transform:'none',opacity:1}],700,{delay:t0,easing:'cubic-bezier(.2,.8,.3,1)'});
+ return{tr,cr}}
+// tree crown → box morph
+function morph(d,fx,fy,t0){const bw=d.offsetWidth,bh2=d.offsetHeight,cx=parseFloat(d.style.left)+bw/2,cy=parseFloat(d.style.top)+bh2/2;d.style.visibility='';d.style.zIndex=3;
+ A(d,[{opacity:0,transform:`translate(${fx-cx}px,${fy-cy}px) scale(${170/bw},${150/bh2})`,borderRadius:'50%',background:'#5aae4c'},{opacity:1,transform:`translate(${fx-cx}px,${fy-cy}px) scale(${170/bw},${150/bh2})`,borderRadius:'50%',background:'#5aae4c',offset:.01},{opacity:1,transform:'none',borderRadius:'26px',background:'#fffdf7'}],760,{delay:t0,easing:'cubic-bezier(.5,0,.2,1)'});
+ [...d.children].forEach(c=>A(c,[{opacity:0},{opacity:1}],380,{delay:t0+480}))}
+
+// ================= slides =================
+const S=[
+{cam:[0,0,1],sam:{x:330,face:'grin',acc:['letter']},cap:'Meet Sam. Sam just got into college. But is it actually worth it?',
+ enter:async(L,w)=>{const t=$('div','ttl',L,`<div class="tk">A story told in numbers</div><h1><span class="l1">IS COLLEGE</span><span>WORTH IT?</span></h1><p>Cost, return, and the alternatives.</p>`);at(t,90,84);
+  A(t.querySelector('.tk'),[{opacity:0,transform:'translateX(-60px)'},{opacity:1,transform:'none'}],600,{delay:150});
+  t.querySelectorAll('h1 span').forEach((s,i)=>A(s,[{opacity:0,transform:'translateY(-150px) rotate(-5deg)'},{opacity:1,transform:'translateY(12px) rotate(1deg)',offset:.72},{opacity:1,transform:'none'}],820,{delay:450+i*260}));
+  fadeIn(t.querySelector('p'),1250,600);await w(1550);Sam.jump();pop(bub(L,452,452,'I got in!'),0,500)}},
+{cam:[0,-1500,1],sam:{x:430,face:'grin'},chap:[1,'The Promise'],cap:'For decades the deal sounded simple. But the price tag kept climbing faster than paychecks.',
+ tr:async(old,L,w)=>{const t=old.querySelector('.ttl');fadeOut(old.querySelector('.bub'),0,200);A(t,[{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-90px) scale(.92)'}],700,{delay:200});
+  Sam.face('grin');Sam.acc([]);Sam.pose('throw');const pl=$('div','plane',L,PLANE);
+  (async()=>{await w(420);await camTo(0,-1500,1,2500)})().catch(()=>{});
+  const p2=$('div','plane',L,PLANE),p3=$('div','plane',L,PLANE);[p2,p3].forEach(p=>p.style.transform='translate(-400px,-2000px)');
+  (async()=>{await w(1750);await Promise.all([flyPath(p2,[[-220,-1420],[60,-1300],[220,-1180],[150,-1020],[330,-1060]],1250,E.o),flyPath(p3,[[1820,-760],[1560,-860],[1400,-1000],[1440,-1120],[1270,-1060]],1250,E.o)])})().catch(()=>{});
+  await flyPath(pl,[[Sam.x+52,Sam.y-150],[560,470],[820,190],[990,-220],[860,-640],[580,-880],[640,-1150],[800,-1078]],3000);await w(0);
+  Sam.pose(null);Sam.set(430,GY);old.remove();await w(120);
+  S[1].enter(L,w).catch(()=>{})},
+ enter:async(L,w)=>{CARDS.forEach((c,i)=>{const cw=$('div','cw',L);at(cw,CC[i][0]-200,CC[i][1]-120);cw.style.setProperty('--r',[-2.5,1.5,-1.2][i]+'deg');cw.style.animationDelay=(-i*1.4)+'s';
+   const cd=$('div','card',cw,`<div class="ct"><h3>${c[0]}</h3><p>${c[1]}</p></div>`);$('i','pin',cw);unfold(cd,i*200)});
+  L.querySelectorAll('.plane').forEach(p=>A(p,[{opacity:1},{opacity:0}],140).finished.then(()=>p.remove()))}},
+{cam:[0,0,1],sam:{x:430,face:'shock'},chap:[2,'The Price Tag'],cap:'Average sticker price at a private college: about $45,000 a year. And that is before housing and food.',src:'College Board, Trends in College Pricing 2025',
+ tr:async(old,L,w)=>{bigTree(L);const cws=[...old.querySelectorAll('.cw')];Sam.set(430,GY);Sam.flip(1);Sam.acc([]);Sam.face('think');
+  (async()=>{await w(450);await camTo(0,0,1,1900)})().catch(()=>{});
+  await Promise.all(cws.map(async(cw,j)=>{const[cx,cy]=CC[j],cd=cw.querySelector('.card');cw.style.animation='none';cw.style.transform=`rotate(${[-2.5,1.5,-1.2][j]}deg)`;
+   await w(j*240);fadeOut(cw.querySelector('.pin'),0,150);
+   A(cd,[{clipPath:P0,background:'#fffdf7',transform:'none'},{clipPath:P1,background:'#f1eee6',transform:'scale(.8,.9) rotate(6deg)',offset:.35},{clipPath:PL(bl(112,j)),background:'#e5e1d8',transform:'scale(.42) rotate(-20deg)',offset:.7},{clipPath:PL(bl(92,j+3)),background:'#dcd8cf',transform:'scale(.14,.233) rotate(80deg)'}],700,{easing:'ease-in-out'});
+   await w(660);const b=$('div','ball',L),x1=CANX+(j-1)*16,y1=CANY+36;fadeOut(cw,0,60);
+   await tw(1600,p=>{b.style.transform=`translate(${lerp(cx,x1,E.io(p))-28}px,${cy+(y1-cy)*p*p-28}px) rotate(${p*760}deg)`},E.l);
+   b.remove();canHit();if(j===0){Sam.face('shock');Sam.jump()}}));
+  await w(0);old.remove();S[2].enter(L,w).catch(()=>{})},
+ enter:async(L,w)=>{Sam.face('think');const tr=L.__tree||bigTree(L);
+  const it=[{x:800,y:96,w:640,h:`<div class="kk">Private 4-year tuition &middot; 2025&ndash;26</div>`},{x:800,y:166,w:520,h:`<div class="nm">$45,000</div><div class="nt">a year, before financial aid</div>`},{x:800,y:392,w:640,h:`<div class="nt lg">Average published tuition and fees. Housing, food and transportation cost extra.</div>`}];
+  it.forEach(o=>{const d=box(L,o.x,o.y,o.w,o.h);d.style.visibility='hidden';d.style.zIndex=3;o.d=d;o.cx=o.x+d.offsetWidth/2;o.cy=o.y+d.offsetHeight/2});
+  // gust of wind
+  for(let k=0;k<5;k++){const g=$('div','',L,sv(340,60,`<path d="M4 ${30+(k%2?8:-6)} C90 ${k%2?0:52} 200 ${k%2?56:4} 336 ${30}" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>`));g.style.zIndex=4;
+   A(g,[{transform:`translate(-380px,${300+k*70}px)`,opacity:0},{transform:`translate(300px,${290+k*70}px)`,opacity:1,offset:.4},{transform:`translate(1500px,${270+k*70}px)`,opacity:0}],1300,{delay:k*140,easing:'linear'})}
+  A(tr.cr,[{transform:'rotate(0)'},{transform:'rotate(5deg)'},{transform:'rotate(-2.5deg)'},{transform:'rotate(1.5deg)'},{transform:'rotate(0)'}],2200,{delay:150,easing:'ease-in-out',fill:'none'});
+  Sam.face('shock');Sam.flip(1);
+  // loose leaves blown away
+  const r=R(5);for(let k=0;k<14;k++){const lf=$('div','',L,LEAF);lf.style.zIndex=4;const sx=60+r()*330,sy=220+r()*220,ex=1000+r()*700,ey=200+r()*500;
+   (async()=>{await w(250+k*70);await flyPath(lf,[[sx,sy],[sx+180,sy-60-r()*80],[(sx+ex)/2,(sy+ey)/2+60],[ex,ey]],1500+r()*700,E.l);lf.remove()})().catch(()=>{})}
+  // three leaves become the boxes
+  Sam.face('think');
+  await Promise.all(it.map(async(o,i)=>{await w(450+i*330);const lf=$('div','',L,LEAF);lf.style.zIndex=5;const sx=[200,320,120][i],sy=[270,230,360][i];
+   await flyPath(lf,[[sx,sy],[sx+160,sy-90],[(sx+o.cx)/2,o.cy+80],[o.cx-90,o.cy-30],[o.cx,o.cy]],1250,E.s);
+   const d=o.d,bw=d.offsetWidth,bh=d.offsetHeight;lf.remove();d.style.visibility='';
+   A(d,[{transform:`scale(${70/bw},${40/bh}) rotate(-20deg)`,borderRadius:'50% 6% 50% 6%',background:'#5aae4c'},{transform:'scale(1.04) rotate(1deg)',borderRadius:'26px',background:'#fffdf7',offset:.7},{transform:'none',borderRadius:'26px',background:'#fffdf7'}],700,{easing:'cubic-bezier(.4,0,.2,1)'});
+   [...d.children].forEach(c=>A(c,[{opacity:0},{opacity:1}],350,{delay:450}))}));
+  cnt(it[1].d.querySelector('.nm'),45000,{pre:'$',d:1300});await w(1500);Sam.face('shock');Sam.on('sweat');Sam.jump();pop(bub(L,516,552,'$45K a YEAR?!'),0,500)}},
+{cam:[Z(1),0,1],sam:{x:Z(1)+70,face:'smile'},chap:[2,'The Price Tag'],cap:'But college is not one product with one price. Where you go changes the bill a lot.',src:'College Board, 2025–26 average published tuition and fees. Before aid; excludes housing, food and transportation.',
+ enter:async(L,w)=>{const rr=row(L,Z(1));Sam.pose('up');
+  rr.forEach((r,i)=>{const dl=200+i*560;r.tg.textContent='$0';A(r.d,[{clipPath:'inset(100% -30% 0 -30%)'},{clipPath:'inset(-30% -30% 0 -30%)'}],760,{delay:dl,easing:'cubic-bezier(.2,.8,.3,1)'});pop(r.lb,dl+300,450);pop(r.tg,dl+560,450);cnt(r.tg,r.b.p,{pre:'$',dl:dl+560,d:800})});
+  await w(200+3*560+700);shake(16,500);Sam.face('shock');Sam.on('sweat');Sam.jump();
+  await w(800);const c=C(L,Z(1)+985,140,'Same school. <b>Out-of-state</b> pays 2.7&times; more.','chip sm r');pop(c)}},
+{cam:[Z(1),0,1],sam:{x:Z(1)+70,face:'think'},same:1,chap:[2,'The Price Tag'],cap:'Good news: few students pay the sticker price. After grants, the average bill shrinks a lot.',src:'College Board estimates for first-time, full-time students, 2025–26. Excludes living costs; not a prediction for any one family.',
+ enter:async(L,w)=>{const ox=Z(1);FAST++;const rr=row(L,ox);FAST--;
+  const f=C(L,ox+800,28,'Net price = cost of attendance <b>&minus; grants &amp; scholarships</b>','chip');pop(f,150);
+  const f2=C(L,ox+800,96,"Loans don't lower the price. They just finance it.",'chip sm r');pop(f2,650);await w(1000);
+  rr.forEach(r=>{if(!r.b.net){A(r.d,[{opacity:1},{opacity:.3}],600);A(r.tg,[{opacity:1},{opacity:.3}],600);A(r.lb,[{opacity:1},{opacity:.4}],600)}});
+  for(const r of rr.filter(r=>r.b.net)){const hn=bh(r.b.net),cut=r.h-hn;const sl=$('div','slice',L,cut>120?'GRANTS':'');at(sl,ox+r.b.x-6,BASE-r.h-6);sl.style.width=(r.b.w+12)+'px';sl.style.height=(cut+12)+'px';pop(sl,0,450);await w(700);
+   A(r.d,[{clipPath:'inset(0 -30% 0 -30%)'},{clipPath:`inset(${cut}px -30% 0 -30%)`}],800);A(sl,[{transform:'none',opacity:1},{transform:'translateY(-170px) rotate(-6deg)',opacity:0}],950,{easing:'ease-in'});
+   r.tg.innerHTML=`<s>$${fmt(r.b.p)}</s><b>$${fmt(r.b.p)}</b>`;A(r.tg,[{transform:'none'},{transform:`translateY(${cut-26}px)`}],800);cnt(r.tg.querySelector('b'),r.b.net,{pre:'$',from:r.b.p,d:900});await w(900)}
+  Sam.face('relief');Sam.jump();pop(bub(L,ox+20,420,'Phew!'),0,450)}},
+{cam:[Z(2),0,1],sam:{x:Z(2)+560,face:'smile'},chap:[3,'The Hidden Costs'],cap:'There is also a hidden cost: the paycheck Sam gives up while sitting in class.',src:'Illustrative: $40K a year working vs. $10K a year while enrolled. Not national averages; excludes taxes, raises and benefits. The NY Fed counts forgone earnings.',
+ enter:async(L,w)=>{const ox=Z(2);const al=Char(L,{s:1.1,skin:'sk3',hair:'bun',hairC:'#1e1a1a',shirt:'#3a7bd5',x:ox+1250,flip:-1,acc:['apron'],face:'grin'});fadeIn(al.el,100,400);
+  const c1=C(L,ox+560,402,'<b>Studying:</b> $10K / yr','chip'),c2=C(L,ox+1250,402,'<b>Working:</b> $40K / yr','chip t');pop(c1,400);pop(c2,700);
+  const yr=C(L,ox+905,250,'YEAR <span>1</span>','yr');pop(yr,1000);await w(1500);const JX=[720,830,940,1050];
+  for(let i=0;i<4;i++){yr.querySelector('span').textContent=i+1;A(yr,[{transform:'scale(1)'},{transform:'scale(1.2)'},{transform:'scale(1)'}],300,{fill:'none'});al.pose('wave');
+   for(let k=0;k<3;k++){const cn=$('div','coin',L),x0=ox+1205,y0=650,x1=ox+JX[i],y1=742;tw(520,p=>{cn.style.transform=`translate(${lerp(x0,x1,p)-15}px,${lerp(y0,y1,p)-Math.sin(p*Math.PI)*170-15}px)`},E.l).then(()=>cn.remove());await w(110)}
+   await w(420);const st=$('div','',L,COINS);at(st,ox+JX[i]-40,684);pop(st,0,400);pop(C(L,ox+JX[i],640,'$30K','chip sm'),120,400);al.pose(null);await w(420)}
+  fadeOut(yr,0,300);Sam.face('worry');const tb=C(L,ox+800,140,'<div class="kk">Earnings given up over 4 years</div><div class="nm">$0</div>','bx');pop(tb,200);cnt(tb.querySelector('.nm'),120000,{pre:'$',dl:350,d:1100})}},
+{cam:[Z(3),0,1],sam:{x:Z(3)+478,face:'smile'},chap:[3,'The Hidden Costs'],cap:'And starting college does not guarantee finishing it.',src:'National Student Clearinghouse, Dec 2025: 2.3M+ learners who began in fall 2019, all sectors and credentials. Rounding totals 99.9%.',
+ enter:async(L,w)=>{const ox=Z(3);const tl=box(L,ox+40,128,430,'<div class="kk">2.3 million+ students</div><div class="nt lg">who started college in fall 2019, six years later</div>');pop(tl,100);
+  const M=[];for(let r=0;r<10;r++)for(let c=0;c<10;c++){const m=Mini(L,ox+262,706,c*10+r,3);m.tx=ox+600+c*96;m.ty=392+r*35;M[c*10+r]=m;m.el.style.opacity=0}
+  M.forEach((m,i)=>{const a=`translate(${m.x-26}px,${m.y-82}px)`,b=`translate(${m.tx-26}px,${m.ty-82}px)`;A(m.el,[{transform:a,opacity:0},{transform:a,opacity:1,offset:.08},{transform:b,opacity:1}],1000,{delay:300+i*16,easing:'cubic-bezier(.4,.1,.3,1)'});m.x=m.tx;m.y=m.ty});
+  await w(2400);M.slice(0,61).forEach((m,i)=>setTimeout(()=>m.el.classList.add('cap'),FAST?0:i*10));pop(C(L,ox+840,205,'<div class="nm">61.1%</div><div>finished a credential</div>','gl'),300);Sam.face('grin');
+  await w(1300);M.slice(61,70).forEach(m=>m.el.classList.add('book'));pop(C(L,ox+1176,118,'<div class="nm">9.0%</div><div>still enrolled</div>','gl'));
+  await w(1300);M.slice(70).forEach(m=>m.el.classList.add('gray'));pop(C(L,ox+1388,205,'<div class="nm">29.8%</div><div>no longer enrolled</div>','gl'));Sam.face('shock')}},
+{cam:[Z(4),0,1],sam:{x:Z(4)+80,face:'think',acc:['watch']},chap:[3,'The Hidden Costs'],cap:'Finishing late costs you too. Every extra year shrinks the payoff.',src:"NY Fed modeled annual returns to a bachelor's degree. Not guaranteed annual payments; typical returns stay positive in each case.",
+ enter:async(L,w)=>{const ox=Z(4);const sc=C(L,ox+800,36,'YEARS IN SCHOOL<b>0.0</b>','score');pop(sc,100);pop(C(L,ox+800,212,"<b>Estimated yearly return</b> on a bachelor's degree",'chip'),400);
+  const LN=[610,657,704],FIN=[4,5,6],RET=['12.5%','~9%','~7%'],X0=ox+210,X1=ox+1352,done=[0,0,0];
+  const rn=LN.map((y,i)=>Char(L,{s:.5,skin:MSK[(i+1)%4],hair:['short','bun','curly'][i],hairC:MHC[i+1],shirt:['#3a7bd5','#f29a2e','#8a5cc2'][i],x:X0,y,face:'smile'}));rn.forEach((r,i)=>fadeIn(r.el,i*120,300));
+  await w(1100);rn.forEach(r=>r.on('run'));Sam.pose('point');
+  await tw(5200,p=>{const yr=p*6;sc.querySelector('b').textContent=yr.toFixed(1);rn.forEach((r,i)=>{const q=Math.min(yr/FIN[i],1);r.set(lerp(X0,X1,q),LN[i]);if(q>=1&&!done[i]){done[i]=1;r.on('run',false);r.face(i?'worry':'grin');pop(C(L,ox+1522,LN[i]-36,`<b>${RET[i]}</b> &middot; ${FIN[i]} yrs`,'flag'),0,400)}})},E.l);
+  Sam.pose(null);Sam.face('worry')}},
+{cam:[Z(5),0,1],sam:{x:Z(5)+100,face:'smile'},chap:[4,'The Payoff Gap'],cap:'Even among graduates, the results vary a lot.',src:"NY Fed, 2024, baseline costs. Doesn't show what these graduates would have earned without college; some choose lower-paid work they value.",
+ enter:async(L,w)=>{const ox=Z(5),G=[];for(let i=0;i<8;i++){const g=Char(L,{s:.62,skin:MSK[i%4],hair:['short','bun','curly','long'][i%4],hairC:MHC[i%5],shirt:'#23305a',x:ox+300+i*130,y:604,acc:['gown','cap'],face:'smile'});fadeIn(g.el,i*90,300);G.push(g)}
+  await w(1100);const bk=$('div','brk',L);at(bk,ox+248,430);bk.style.width='236px';fadeIn(bk);const sp=$('div','spot',L);at(sp,ox+430,-40);fadeIn(sp,0,700);G[1].face('sad');G[0].face('worry');
+  pop(C(L,ox+365,104,'<div class="kk">25th percentile</div><div class="nm sm">2.6%</div><div class="nt">return: low, but not a loss</div>','bx'),300);
+  await w(1400);G[3].face('grin');G[4].face('grin');pop(C(L,ox+845,104,'<div class="kk">Typical graduate</div><div class="nm sm">12.5%</div><div class="nt">return, counting all costs</div>','bx'));
+  await w(1300);pop(C(L,ox+1290,150,'At least <b>1 in 4</b> grads:<br>questionable financial value','chip wrap'));Sam.face('think')}},
+{cam:[Z(6),0,1],sam:{x:Z(6)+120,face:'think'},chap:[4,'The Payoff Gap'],cap:'Only a few doors lead to a reliable payoff: STEM, nursing and medicine, and law.',src:"Georgetown CEW, The Major Payoff 2025 (workers 25–54); NY Fed recent-grad data (2024) via Forbes, Feb 2026.",
+ enter:async(L,w)=>{const ox=Z(6);const D=[[330,'STEM <i>&#10003;</i>','Highest-paid field: <b>$98K</b> median. Pick carefully, though: STEM majors range from $64K to $146K.'],[800,'Nursing &amp; medicine <i>&#10003;</i>','Nursing grads: just <b>2.1%</b> unemployed. Pre-med plus a graduate degree: <b>$152K</b> median.'],[1270,'Law <i>&#10003;</i>','A high ceiling, but it takes 7 years of school. Choose a school where the pay justifies the debt.']];
+  const dr=D.map(([c])=>{const d=$('div','door',L);at(d,ox+c-86,404);d.style.width='172px';d.style.height='238px';return d});
+  for(let i=0;i<3;i++){await Sam.walkTo(ox+D[i][0]-150,GY,i?900:500);Sam.flip(1);A(dr[i],[{transform:'perspective(700px) rotateY(0)'},{transform:'perspective(700px) rotateY(-78deg)'}],700);
+   pop(C(L,ox+D[i][0],104,`<h3>${D[i][1]}</h3><p>${D[i][2]}</p>`,'card2'),300);Sam.face(['grin','grin','grin'][i]);Sam.jump();await w(1000)}
+  Sam.pose('cheer');pop(bub(L,Sam.x+40,440,'These three actually pay!'),0,450)}},
+{cam:[Z(6),0,1],sam:{x:Z(6)+1430,face:'think',flip:-1},same:1,chap:[4,'The Payoff Gap'],cap:'Everyone else? Sam checks how arts and humanities grads are doing... and completely loses it.',src:'NY Fed, recent grads 22–27 (2024 data, Feb 2026 release); Georgetown CEW (film & photo, 2021–23). Underemployed = job doesn’t usually need a degree.',
+ enter:async(L,w)=>{const ox=Z(6);Sam.flip(-1);
+  const RW=[['Performing arts',63.9,'7.0% jobless'],['Fine arts',58.9,'7.7% jobless'],['Anthropology',55.3,'7.9% jobless'],['Liberal arts',54.6,''],['All majors',42,'',1]];
+  const bd=$('div','rb',L,`<div class="hd">RECENT GRADS IN JOBS THAT DON'T NEED A DEGREE</div><div class="hs">Underemployment by major &middot; ages 22&ndash;27</div>`+RW.map(r=>`<div class="rr${r[3]?' ref':''}"><div class="ml">${r[0]}</div><div class="tk2"><div class="bf" style="width:${r[1]/70*100}%"></div></div><div class="pv">0%</div><div class="un">${r[2]}</div></div>`).join(''));at(bd,ox+110,92);
+  A(bd,[{transform:'translateY(-900px) rotate(-3deg)'},{transform:'translateY(18px) rotate(1deg)',offset:.75},{transform:'none'}],850,{easing:'cubic-bezier(.5,0,.7,1.4)'});
+  await w(820);shake(14,350);Sam.face('shock');Sam.jump();
+  const rows=[...bd.querySelectorAll('.rr')];
+  for(let i=0;i<rows.length;i++){const r=rows[i];A(r.querySelector('.bf'),[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],700,{easing:'cubic-bezier(.2,.8,.3,1)'});cnt(r.querySelector('.pv'),RW[i][1],{dec:RW[i][1]%1?1:0,suf:'%',d:700});
+   fadeIn(r.querySelector('.un'),500,300);if(i===1)Sam.face('worry');if(i===2){Sam.face('rage');Sam.on('steam')}await w(i===rows.length-2?900:650)}
+  const c1=C(L,ox+420,568,'Film &amp; photo grads: <b>11%</b> unemployed','chip r');pop(c1,0,450);
+  const c2=C(L,ox+905,568,'Nursing grads: just <b>2.1%</b> unemployed','chip t');pop(c2,250,450);
+  await w(500);Sam.face('rage');Sam.on('steam');Sam.on('sweat',false);Sam.pose('fists');shake(26,900);
+  for(let k=0;k<3;k++){Sam.jump();await w(380)}
+  const b=bub(L,ox+1180,404,'ARE YOU KIDDING ME?!');b.style.setProperty('--tx','200px');b.style.fontSize='27px';pop(b,0,420);
+  A(b,[{transform:'rotate(-2deg)'},{transform:'rotate(2deg)'}],120,{iterations:12,direction:'alternate',delay:420,fill:'none'});
+  await w(2100);fadeOut(b,0,200);
+  const kit=$('div','',L,sv(200,170,'<path d="M30 60 H170 V150 Q100 168 30 150Z" fill="#1f6f4a"/><path d="M60 60 L50 20 M140 60 L150 20" stroke="#1f6f4a" stroke-width="10"/><rect x="72" y="80" width="56" height="22" rx="4" fill="#fff"/><path d="M20 40 Q100 -6 180 40 L180 58 Q100 14 20 58Z" fill="#17583a"/><path d="M150 96 L182 96 L177 140 L155 140Z" fill="#fff" stroke="#d8d2c4" stroke-width="3"/><rect x="152" y="106" width="28" height="16" fill="#1f6f4a"/>'));
+  const kx=Sam.x-100;await tw(560,p=>{kit.style.transform=`translate(${kx}px,${lerp(-360,500,p)}px) rotate(${lerp(-25,8,p)}deg)`},E.i);
+  const pf=$('div','',L,sv(260,260,'<g fill="#fff">'+[0,1,2,3,4,5,6,7].map(k=>`<circle cx="${130+Math.cos(k*.785)*90}" cy="${130+Math.sin(k*.785)*90}" r="34"/>`).join('')+'</g>'));at(pf,Sam.x-130,410);
+  A(pf,[{transform:'scale(.3)',opacity:1},{transform:'scale(1.15)',opacity:0}],520,{easing:'ease-out'});A(kit,[{opacity:1},{opacity:0}],120);
+  shake(12,300);Sam.squash();Sam.pose(null);Sam.on('steam',false);Sam.on('barista');Sam.face('shock');
+  await w(900);Sam.face('sad');const b2=bub(L,ox+1150,404,'...one grande latte?');b2.style.setProperty('--tx','230px');pop(b2,0,420)}},
+{cam:[Z(7),0,1],sam:{x:Z(7)+430,face:'grin',acc:['gown','cap','dip']},chap:[5,'The Debt'],cap:'Sam graduates! And then the bill arrives.',src:'College Board, Trends in Student Aid 2025. Not a figure for graduate-school borrowers.',
+ enter:async(L,w)=>{const ox=Z(7);Sam.pose('wave');const b=bub(L,ox+530,446,'I graduated!');pop(b,200,500);await w(1600);fadeOut(b);Sam.pose(null);
+  const pk=$('div','',L,PACK),px=ox+430-115;await tw(600,p=>{pk.style.transform=`translate(${px}px,${lerp(-340,520,p)}px)`},E.i);
+  shake(20,450);Sam.squash();Sam.face('shock');Sam.acc(['gown','cap','pack','sweat']);A(pk,[{opacity:1,transform:`translate(${px}px,520px)`},{opacity:0,transform:`translate(${px}px,600px) scale(.5)`}],280);
+  await w(500);const bx=C(L,ox+1070,110,"<div class=\"kk\">Average debt &middot; 2023&ndash;24 bachelor's grads who borrowed</div><div class=\"nm\">$0</div><div class=\"nt\">Not the average for all graduates. Adjusted for inflation,<br>it's lower than for borrowers a decade earlier.</div>",'bx');pop(bx);cnt(bx.querySelector('.nm'),29560,{pre:'$',dl:300,d:1200})}},
+{cam:[Z(7),0,1],sam:{x:Z(7)+430,face:'worry',acc:['gown','cap','pack']},same:1,chap:[5,'The Debt'],cap:'Spread over ten years at 6%, that debt turns into a monthly bill.',src:'Calculated: fixed 6% interest, 120 monthly payments, no fees or forgiveness. Not current federal loan terms.',
+ enter:async(L,w)=>{const ox=Z(7);pop(C(L,ox+1110,30,'<div class="kk">10 years &middot; fixed 6% interest</div><div class="nt lg">What the debt costs each month</div>','bx'),100);
+  const SX=[960,1170,1380],D=[[30000,333,9967],[60000,666,19935],[100000,1110,33225]];await w(600);
+  for(let i=0;i<3;i++){const h=Math.round(D[i][1]/1110*350),top=700-h;
+   for(let k=0;k<4;k++){const e=$('div','env',L),x0=ox+780,y0=600,x1=ox+SX[i],y1=top;tw(560,p=>{e.style.transform=`translate(${lerp(x0,x1,p)-23}px,${lerp(y0,y1,p)-Math.sin(p*Math.PI)*150-15}px) rotate(${p*360}deg)`},E.l).then(()=>e.remove());await w(90)}
+   const st=$('div','stk',L);at(st,ox+SX[i],top);st.style.height=h+'px';A(st,[{clipPath:'inset(100% -20px -20px -20px)'},{clipPath:'inset(-20px -20px -20px -20px)'}],700,{delay:300});
+   pop(C(L,ox+SX[i],top-128,`$${fmt(D[i][1])}<span style="font-size:22px">/mo</span>`,'tag'),700,450);pop(C(L,ox+SX[i],top-62,`$${fmt(D[i][2])} interest`,'chip sm'),900,400);pop(C(L,ox+SX[i],714,`$${D[i][0]/1000}K owed`,'chip sm r'),500,400);await w(1000)}
+  Sam.face('worry');Sam.on('sweat')}},
+{cam:[Z(8),0,1],sam:{x:Z(8)+300,face:'worry',acc:['gown','cap','pack']},chap:[5,'The Debt'],cap:'For many borrowers, keeping up with those payments is hard.',src:'Federal Reserve, Economic Well-Being of U.S. Households in 2025. Payment difficulty is broader than default; the two rates use different groups.',
+ enter:async(L,w)=>{const ox=Z(8),W=[];for(let r=0;r<10;r++)for(let c=0;c<10;c++){const d=$('div','win',L);at(d,ox+632+c*86,56+r*52);W.push(d);A(d,[{background:'#2a3a5c'},{background:'#ffd97a'}],300,{delay:200+(r+c)*45})}
+  const b=box(L,ox+60,140,500,'<div class="kk">Borrowers required to make payments</div><div class="nm">0%</div><div class="nt lg">had trouble paying recently</div>');pop(b,300);await w(1500);
+  const r0=R(41),idx=[...Array(100).keys()].sort(()=>r0()-.5).slice(0,41);
+  idx.forEach((k,j)=>{A(W[k],[{background:'#ffd97a'},{background:'#ff7a6b'}],300,{delay:j*30});const rn=$('div','rain',L,RAIN);at(rn,ox+632+(k%10)*86+3,56+Math.floor(k/10)*52-24);pop(rn,j*30,300)});
+  cnt(b.querySelector('.nm'),41,{suf:'%',d:1200});await w(1500);Sam.on('sweat');
+  const c1=$('div','chip t',L,'<b>76%</b> of them: an affordability problem');at(c1,ox+60,400);pop(c1);
+  const c2=$('div','chip sm',L,'<b>23%</b> of all adults with student debt had trouble');at(c2,ox+60,460);pop(c2,400)}},
+{cam:[Z(9),0,1],sam:{x:Z(9)+540,face:'think',acc:['gown','cap']},chap:[6,'The Job Market'],cap:'And a degree does not guarantee a job that actually needs one.',src:'NY Fed, The Labor Market for Recent College Graduates, 2026 Q2, ages 22–27. Some of these jobs pay well, and many grads move up later.',
+ enter:async(L,w)=>{const ox=Z(9);pop(C(L,ox+800,34,'<div class="kk">Employed recent grads &middot; ages 22&ndash;27</div><div class="nt lg">Where 100 of them work</div>','bx'),100);
+  const M=[];for(let r=0;r<10;r++)for(let c=0;c<10;c++){const m=Mini(L,ox+600+c*44,380+r*32,c*10+r,9);m.el.classList.add('cap');M[c*10+r]=m;fadeIn(m.el,200+(r+c)*30,300)}
+  await w(1600);
+  M.forEach((m,i)=>{if(i<58){const c=i%8,r=Math.floor(i/8);moveMini(m,ox+130+c*42,440+r*36,1300,Math.random()*400)}else{const j=i-58,c=j%7,r=Math.floor(j/7);moveMini(m,ox+1140+c*48,500+r*38,1300,Math.random()*400)}});
+  await w(1800);M.slice(58).forEach((m,i)=>setTimeout(()=>{m.el.classList.add('apron')},FAST?0:i*20));
+  pop(C(L,ox+290,130,'<div class="nm">58%</div><div>in jobs that need a degree</div>','gl'));await w(600);
+  pop(C(L,ox+1310,180,'<div class="nm">42%</div><div>underemployed: jobs that don\'t</div>','gl'));Sam.face('worry');await w(900);
+  pop(C(L,ox+800,250,"Unemployment (~5.6%) is a separate measure.<br>Don't add the two.",'chip wrap sm'))}},
+{cam:[Z(10),0,1],sam:{x:Z(10)+110,face:'smile',acc:['gown','cap']},chap:[7,'The Other Side'],cap:'Now the other side: degree holders really do earn more.',src:'BLS, Education Pays: 2025 median weekly earnings, full-time wage and salary workers 25+. October 2025 data were not collected.',
+ enter:async(L,w)=>{const ox=Z(10);pop(box(L,ox+60,120,520,'<div class="kk">Median weekly earnings &middot; 2025</div><div class="nt">Full-time workers age 25+. Not starting salaries.</div>'),100);await w(500);
+  for(let i=0;i<5;i++){const s=STEPS[i],cx=ox+200+i*240+120;await Sam.hop(cx-(i===4?50:0),s.y,480,i===3?150:90);Sam.squash();
+   pop(C(L,cx+11,s.y+16,`${s.n}<span>$${fmt(s.p)} / week</span>`,'lbl st'),0,450);if(i===3){Sam.face('grin');pop(C(L,ox+650,300,'+$612 a week, about <b>63% more</b> than high school','chip'),200)}await w(380)}
+  Sam.pose('cheer');Sam.face('grin')}},
+{cam:[Z(10)+300,-110,1.15],sam:{x:Z(10)+1230,y:STEPS[4].y,face:'grin',acc:['gown','cap'],pose:'cheer'},same:1,chap:[7,'The Other Side'],cap:'On average the return looks great. But the average is carried by engineering, computer and health grads.',src:'NY Fed, Is College Still Worth It? and When College Might Not Be Worth It (Apr 2025). Typical graduate, 2024.',
+ enter:async(L,w)=>{const ox=Z(10),ty=STEPS[4].y;Sam.pose(null);Sam.flip(1);growTree(L,ox+1390,ty,ox+1390,ty-190,200);
+  await w(1000);for(let k=0;k<6;k++){const cn=$('div','coin',L);at(cn,ox+1390+[-50,10,50,-20,30,-60][k]-15,ty-190+[-30,-60,-10,20,30,10][k]-15);cn.style.zIndex=3;pop(cn,k*120,400)}
+  const b=box(L,ox+480,70,560,'<div class="kk">Typical graduate &middot; 2024</div><div class="nm">0%</div><div class="nt lg">yearly return, counting tuition AND lost wages</div>');pop(b,300);cnt(b.querySelector('.nm'),12.5,{dec:1,suf:'%',dl:400,d:1200});
+  await w(1900);Sam.pose('cheer');pop(C(L,ox+760,350,"The catch: you decide <b>before</b> knowing if you'll finish,<br>what you'll pay, or where you'll land.",'chip wrap'))}},
+{cam:[Z(11),0,1],sam:{x:Z(11)+80,face:'think'},chap:[8,'Other Paths'],cap:'But a four-year degree is not the only path.',src:'BLS (May 2025 median pay); U.S. Dept. of Labor; CCRC/Aspen (fall 2015 entrants). Tradeoffs include physical demands and local job availability.',
+ enter:async(L,w)=>{const ox=Z(11);const el=Char(L,{s:.6,skin:'sk3',hair:'short',hairC:'#1e1a1a',shirt:'#f29a2e',acc:['hat'],x:ox+304,y:722,face:'grin'});fadeIn(el.el,0,300);tw(1400,p=>el.set(ox+304,lerp(722,480,p)),E.io);
+  const bus=$('div','bus',L,BUS);A(bus,[{transform:`translate(${ox+1720}px,568px)`},{transform:`translate(${ox+1180}px,568px)`}],1500,{delay:600,easing:'cubic-bezier(.2,.7,.3,1)'});
+  const D=[[300,'Apprenticeships','Paid work plus training and a portable credential. Electricians: <b>$63,190</b> median pay; apprentices earn less.'],[770,'Shorter programs','Dental hygienists: <b>$98,100</b> median with an associate degree and a license. Many work part time.'],[1260,'Transfer pathways','Of community-college starters, <b>33%</b> transferred and <b>16%</b> earned a bachelor\'s within six years.']];
+  for(let i=0;i<3;i++){pop(C(L,ox+D[i][0],96,`<h3>${D[i][1]}</h3><p>${D[i][2]}</p>`,'card2'),300+i*600)}await w(2200);Sam.face('grin')}},
+{cam:[Z(13),0,1],sam:{x:Z(13)+1440,face:'think',flip:-1},chap:[9,'The Decision'],cap:'So before enrolling, Sam asks four questions. The last two matter most.',src:'Federal Student Aid; College Scorecard. Read each statistic\'s population and time period.',
+ enter:async(L,w)=>{const ox=Z(13);const D=[['L',150,'What will I really pay?','Full cost after grants, plus the debt left when repayment starts.'],['R',272,'Will I finish?',"This program's completion rate, and what one more year would cost."],['L',394,'STEM, law or nursing?','Those fields have the clearest path from degree to paycheck.'],['R',516,'If not: who do I know?','Without real connections or a job lined up, the degree rarely pays off.']];
+  const q=bub(L,ox+1336,430,'?',true);pop(q,100,400);
+  for(let i=0;i<4;i++){const[s,y,t,p]=D[i];const pl=$('div','plank '+s,L,`<h4>${t}</h4><p>${p}</p>`);at(pl,s==='L'?ox+344:ox+828,y);pl.style.transformOrigin=s==='L'?'100% 50%':'0 50%';
+   A(pl,[{transform:'scaleX(0) rotate(-8deg)',opacity:0},{transform:'scaleX(1.05) rotate(2deg)',opacity:1,offset:.7},{transform:'none',opacity:1}],650,{delay:200});await w(900)}
+  Sam.face('smile')}},
+{cam:[Z(14),0,1],sam:{x:Z(14)+300,face:'grin'},chap:[9,'The Decision'],cap:'Pick a field that pays, or know the people who can hire you. Otherwise, skip the debt.',
+ enter:async(L,w)=>{const ox=Z(14);await w(500);Sam.pose('throw');const pl=$('div','plane',L,PLANE);
+  await flyPath(pl,[[Sam.x+52,Sam.y-150],[ox+620,540],[ox+560,300],[ox+760,170],[ox+800,280]],1900);fadeOut(pl,0,150);Sam.pose(null);
+  const cw=$('div','',L);at(cw,ox+320,104);const f=$('div','fin',cw,'<div class="ct"><div class="kk">So, is college worth it?</div><h2>Only for <em>STEM, law, or nursing and medicine</em>, or if you have the connections to make any other degree pay.</h2><p>For everyone else, a cheaper path usually wins.</p></div>');unfold(f,0);
+  await w(1700);pop(C(L,ox+840,488,'Thank you!','big thx'));Sam.pose('cheer')}}
+,
+{cam:[Z(14),-760,1],sam:{x:Z(14)+300,face:'grin'},chap:null,cap:'Sources, and the slides that used each one.',
+ enter:async(L,w)=>{const ox=Z(14);
+  const SRC=[['3, 4, 5','College Board: Trends in College Pricing 2025','https://research.collegeboard.org/trends/college-pricing'],
+   ['5, 19','Federal Student Aid: How to Evaluate Your Aid Offers','https://studentaid.gov/articles/evaluating-financial-aid-offers/'],
+   ['6, 9, 17','NY Fed: Is College Still Worth It? (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/is-college-still-worth-it/'],
+   ['7','National Student Clearinghouse: Completing College','https://nscresearchcenter.org/completing-college/'],
+   ['8, 9, 17','NY Fed: When College Might Not Be Worth It (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/when-college-might-not-be-worth-it/'],
+   ['10','Georgetown CEW: The Major Payoff (2025)','https://cew.georgetown.edu/cew-reports/major-payoff/'],
+   ['10','Georgetown CEW: law school reports','https://cew.georgetown.edu/report_tag/law-school/'],
+   ['11, 15','NY Fed: The Labor Market for Recent College Graduates','https://www.newyorkfed.org/research/college-labor-market'],
+   ['10, 11','Forbes: Unemployment & Underemployment Among Recent Grads (Feb 2026)','https://www.forbes.com/sites/michaeltnietzel/2026/02/23/unemployment-and-underemployment-rates-among-recent-college-graduates/'],
+   ['11','Georgetown CEW: Early-Career Earnings & Unemployment by Major','https://cew.georgetown.edu/resource/cew-blog-major-payoff/'],
+   ['12','College Board: Trends in Student Aid 2025','https://research.collegeboard.org/trends/student-aid'],
+   ['14','Federal Reserve: Economic Well-Being of U.S. Households in 2025','https://www.federalreserve.gov/publications/report-economic-well-being-us-households.htm'],
+   ['16','BLS: Education Pays (earnings & unemployment by education)','https://www.bls.gov/emp/chart-unemployment-earnings-education.htm'],
+   ['17','Zimmerman: The Returns to College Admission (J. Labor Econ.)','https://doi.org/10.1086/676661'],
+   ['18','BLS Occupational Outlook: Electricians','https://www.bls.gov/ooh/construction-and-extraction/electricians.htm'],
+   ['18','BLS Occupational Outlook: Dental Hygienists','https://www.bls.gov/ooh/healthcare/dental-hygienists.htm'],
+   ['18','U.S. Dept. of Labor: Apprenticeship for Career Seekers','https://www.apprenticeship.gov/career-seekers'],
+   ['18','CCRC / Aspen Institute: community college transfer reports','https://ccrc.tc.columbia.edu/press-releases/new-reports-all-backgrounds-transfer'],
+   ['19','U.S. Dept. of Education: College Scorecard','https://collegescorecard.ed.gov/']];
+  const pn=$('div','srcp',L,`<h2>Sources</h2><div class="sg">${SRC.map(([s,t,u])=>`<div class="sr"><span class="sb">${s.includes(',')?'Slides':'Slide'} ${s}</span><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}<div class="sr nt2"><span class="sb">Slides 6, 13</span><span>Illustrative example and our own calculations (forgone pay, 6% loan payments)</span></div></div>`);
+  at(pn,ox+70,-730);pn.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
+  A(pn,[{opacity:0,transform:'translateY(60px) scale(.96)'},{opacity:1,transform:'none'}],700,{delay:200});
+  pn.querySelectorAll('.sr').forEach((r,i)=>A(r,[{opacity:0,transform:'translateX(-24px)'},{opacity:1,transform:'none'}],380,{delay:600+i*70}));
+  await w(1200);Sam.pose('wave')}}
+];
+
+// ================= navigation =================
+const Sam=Char(samL,{s:1.25,skin:'sk2',hair:'short',hairC:'#3b2416',shirt:'#e8553d',x:330,face:'grin',acc:['letter']});
+function placeSam(sm){Sam.mv++;Sam.set(sm.x,sm.y||GY);Sam.flip(sm.flip||1);Sam.face(sm.face||'smile');Sam.acc(sm.acc||[]);Sam.pose(sm.pose||null);Sam.el.classList.remove('walk','run')}
+const chapEl=document.getElementById('chap'),subEl=document.getElementById('sub'),srcEl=document.getElementById('src'),pnEl=document.getElementById('pn'),barEl=document.getElementById('bar');
+let chapShown=null;
+function ui(n,inst){const s=S[n],ck=s.chap?s.chap.join('|'):'';
+ if(ck!==chapShown){chapShown=ck;if(s.chap){chapEl.querySelector('.c1').textContent='CHAPTER '+s.chap[0];chapEl.querySelector('.c2').textContent=s.chap[1];chapEl.animate([{opacity:0,transform:'translateX(-70px)'},{opacity:1,transform:'none'}],{duration:inst?1:650,delay:inst?0:450,fill:'both',easing:'cubic-bezier(.2,.9,.3,1.2)'})}else chapEl.animate([{opacity:1},{opacity:0}],{duration:inst?1:300,fill:'both'})}
+ subEl.innerHTML='<div>'+s.cap.split(' ').map(x=>`<span>${x}</span>`).join(' ')+'</div>';
+ subEl.querySelectorAll('span').forEach((e,i)=>{if(inst)e.style.opacity=1;else{e.style.animationDelay=(500+i*80)+'ms';e.classList.add('on')}});
+ srcEl.textContent=s.src?'Source: '+s.src:'';pnEl.textContent=(n+1)+' / '+S.length;barEl.style.width=((n+1)/S.length*100)+'%'}
+let cur=-1,busy=0,G=0,L=null;
+async function defTr(old,Ln,s,w){if(old)fadeOut(old,0,s.same?260:450);
+ const[x,y,z]=s.cam,sm=s.sam||{},dist=Math.hypot(x-cam.x,y-cam.y)+Math.abs(z-cam.z)*900,d=dist<5?300:Math.min(2600,700+dist*.85);
+ Sam.acc(sm.acc||[]);Sam.pose(null);Sam.on('sweat',false);const ps=[camTo(x,y,z,d)];
+ if(sm.x!=null&&(Math.abs(sm.x-Sam.x)>3||Math.abs((sm.y||GY)-Sam.y)>3))ps.push(Sam.walkTo(sm.x,sm.y||GY,d*.94));
+ await Promise.all(ps);await w(0);if(old)old.remove();Sam.flip(sm.flip||1);Sam.face(sm.face||'smile');if(sm.pose)Sam.pose(sm.pose);
+ s.enter(Ln,w).catch(()=>{})}
+async function go(n,jump){if(n<0||n>=S.length||n===cur)return;if(busy&&!jump)return;
+ const g=++G,w=ms=>wait(ms).then(()=>{if(g!==G)throw 0});const s=S[n],old=L,fw=!jump&&n===cur+1;
+ cur=n;L=$('div','ly',layers);
+ if(fw){ui(n,false);busy=1;try{if(s.tr)await s.tr(old,L,w);else await defTr(old,L,s,w)}catch(e){if(e)console.error(e)}if(g===G)busy=0}
+ else{const first=old===null;busy=1;ui(n,!first);camId++;shk=null;layers.querySelectorAll('.ly').forEach(e=>{if(e!==L)e.remove()});cam.x=s.cam[0];cam.y=s.cam[1];cam.z=s.cam[2];placeSam(s.sam||{});
+  if(first){busy=0;s.enter(L,w).catch(e=>e&&console.error(e));return}
+  FAST++;try{await s.enter(L,w)}catch(e){if(e)console.error(e)}await new Promise(r=>setTimeout(r,0));FAST--;if(g===G)busy=0;
+  L.animate([{opacity:0},{opacity:1}],{duration:350})}}
+document.addEventListener('keydown',e=>{if(['ArrowRight',' ','Enter','PageDown'].includes(e.key)){e.preventDefault();go(cur+1)}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(cur-1,true)}else if(e.key==='Home')go(0,true);else if(e.key==='End')go(S.length-1,true)});
+stage.addEventListener('click',e=>{const r=stage.getBoundingClientRect();if(e.clientX<r.left+r.width*.22)go(cur-1,true);else go(cur+1)});
+let tx0=null;stage.addEventListener('touchstart',e=>tx0=e.touches[0].clientX,{passive:true});stage.addEventListener('touchend',e=>{if(tx0==null)return;const d=e.changedTouches[0].clientX-tx0;tx0=null;if(Math.abs(d)>50){e.preventDefault();d<0?go(cur+1):go(cur-1,true)}});
+function fit(){const s=Math.min(innerWidth/1600,innerHeight/900);stage.style.transform=`translate(-50%,-50%) scale(${s})`}
+addEventListener('resize',fit);fit();buildWorld();requestAnimationFrame(render);
+window.__go=go;window.__state=()=>({cur,busy,cam:{...cam}});
+(document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]):Promise.resolve()).then(()=>go(0,true));
+
+</script>
+</body></html>
+
+</body></html>
