@@ -138,6 +138,17 @@ html,body{margin:0;height:100%;background:#05070d;overflow:hidden}
 .sr.nt2{grid-column:1 / -1;font-style:italic}
 .lbl.st{white-space:normal;width:230px;font-size:22px}.lbl.st span{font-size:28px}
 .card2 h3 i{color:#2bb3a3}
+.ttl .by{margin-top:14px;font:600 27px var(--f);color:#fff;--o:#23305a;text-shadow:2px 0 var(--o),-2px 0 var(--o),0 2px var(--o),0 -2px var(--o),0 4px 0 var(--o)}.ttl .by b{color:var(--g);font-weight:700}
+.crd{text-align:center;--o:#23305a}.crd .cn{font:600 34px var(--f);color:#fff;text-shadow:3px 0 var(--o),-3px 0 var(--o),0 3px var(--o),0 -3px var(--o),0 6px 0 var(--o)}.crd .cn b{color:var(--g);font-weight:700}
+.crd .ac{margin-top:16px;font:600 19px var(--f);letter-spacing:.14em;text-transform:uppercase;color:#23305a;opacity:.85}
+.jbtn{position:absolute;right:14px;top:14px;width:40px;height:40px;border:0;border-radius:12px;background:#0b112299;color:#fff;font:700 20px var(--f);cursor:pointer;opacity:.22;transition:opacity .2s;z-index:20;pointer-events:auto;display:flex;align-items:center;justify-content:center}
+.jbtn:hover,.jbtn.op{opacity:1}
+.jmenu{position:absolute;right:14px;top:62px;width:430px;max-height:780px;overflow-y:auto;background:#fffdf7f7;border-radius:18px;box-shadow:0 18px 44px #0a12305e;padding:8px;z-index:20;pointer-events:auto;display:none}
+.jmenu.op{display:block}
+.jmenu button{display:flex;gap:12px;align-items:center;width:100%;border:0;background:none;text-align:left;padding:7px 10px;border-radius:10px;cursor:pointer;font:800 17px var(--b);color:#23305a}
+.jmenu button:hover{background:#ffc83d55}.jmenu button.cur{background:#23305a;color:#fff}
+.jmenu button span{flex:none;width:30px;height:30px;border-radius:50%;background:#e8553d;color:#fff;font:700 15px var(--f);display:flex;align-items:center;justify-content:center}
+#hint{right:68px!important}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <radialGradient id="sk1" cx=".38" cy=".3" r=".78"><stop offset="0" stop-color="#ffe6d0"/><stop offset="1" stop-color="#f0b893"/></radialGradient>
@@ -169,7 +180,7 @@ html,body{margin:0;height:100%;background:#05070d;overflow:hidden}
  <div id="far"></div>
  <div id="world"><div id="zones"></div><div id="back"></div><div id="layers"></div><div id="samL"></div><div id="front"></div></div>
  <div id="tint"></div><div id="vig"></div>
- <div id="ui"><div id="chap"><span class="c1"></span><span class="c2"></span></div><div id="sub"></div><div id="src"></div><div id="pn"></div><div id="bar"></div><div id="hint">&larr; &rarr; or click</div></div>
+ <div id="ui"><div id="chap"><span class="c1"></span><span class="c2"></span></div><div id="sub"></div><div id="src"></div><div id="pn"></div><div id="bar"></div><button class="jbtn" id="jbtn" title="Jump to slide (G)" aria-label="Jump to slide">&#9776;</button><div class="jmenu" id="jmenu"></div><div id="hint">&larr; &rarr; or click</div></div>
 </div>
 <script>
 // ================= utilities =================
@@ -401,10 +412,10 @@ function morph(d,fx,fy,t0){const bw=d.offsetWidth,bh2=d.offsetHeight,cx=parseFlo
 // ================= slides =================
 const S=[
 {cam:[0,0,1],sam:{x:330,face:'grin',acc:['letter']},cap:'Meet Sam. Sam just got into college. But is it actually worth it?',
- enter:async(L,w)=>{const t=$('div','ttl',L,`<div class="tk">A story told in numbers</div><h1><span class="l1">IS COLLEGE</span><span>WORTH IT?</span></h1><p>Cost, return, and the alternatives.</p>`);at(t,90,84);
+ enter:async(L,w)=>{const t=$('div','ttl',L,`<div class="tk">A story told in numbers</div><h1><span class="l1">IS COLLEGE</span><span>WORTH IT?</span></h1><p>Cost, return, and the alternatives.</p><div class="by">By <b>Jacob Burton</b> &middot; <b>Marley Blazi</b> &middot; <b>Yumna Machano</b></div>`);at(t,90,46);
   A(t.querySelector('.tk'),[{opacity:0,transform:'translateX(-60px)'},{opacity:1,transform:'none'}],600,{delay:150});
   t.querySelectorAll('h1 span').forEach((s,i)=>A(s,[{opacity:0,transform:'translateY(-150px) rotate(-5deg)'},{opacity:1,transform:'translateY(12px) rotate(1deg)',offset:.72},{opacity:1,transform:'none'}],820,{delay:450+i*260}));
-  fadeIn(t.querySelector('p'),1250,600);await w(1550);Sam.jump();pop(bub(L,452,452,'I got in!'),0,500)}},
+  fadeIn(t.querySelector('p'),1250,600);A(t.querySelector('.by'),[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],600,{delay:1500});await w(1800);Sam.jump();pop(bub(L,456,486,'I got in!'),0,500)}},
 {cam:[0,-1500,1],sam:{x:430,face:'grin'},chap:[1,'The Promise'],cap:'For decades the deal sounded simple. But the price tag kept climbing faster than paychecks.',
  tr:async(old,L,w)=>{const t=old.querySelector('.ttl');fadeOut(old.querySelector('.bub'),0,200);A(t,[{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-90px) scale(.92)'}],700,{delay:200});
   Sam.face('grin');Sam.acc([]);Sam.pose('throw');const pl=$('div','plane',L,PLANE);
@@ -595,7 +606,7 @@ const S=[
    ['18','CCRC / Aspen Institute: community college transfer reports','https://ccrc.tc.columbia.edu/press-releases/new-reports-all-backgrounds-transfer'],
    ['19','U.S. Dept. of Education: College Scorecard','https://collegescorecard.ed.gov/']];
   const pn=$('div','srcp',L,`<h2>Sources</h2><div class="sg">${SRC.map(([s,t,u])=>`<div class="sr"><span class="sb">${s.includes(',')?'Slides':'Slide'} ${s}</span><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}<div class="sr nt2"><span class="sb">Slides 6, 13</span><span>Illustrative example and our own calculations (forgone pay, 6% loan payments)</span></div></div>`);
-  at(pn,ox+70,-730);pn.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
+  at(pn,ox+70,-730);const cr=C(L,ox+800,-176,'<div class="cn">Presented by <b>Jacob Burton</b> &middot; <b>Marley Blazi</b> &middot; <b>Yumna Machano</b></div><div class="ac">Animated with Claude</div>','crd');A(cr,[{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],700,{delay:900});pn.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
   A(pn,[{opacity:0,transform:'translateY(60px) scale(.96)'},{opacity:1,transform:'none'}],700,{delay:200});
   pn.querySelectorAll('.sr').forEach((r,i)=>A(r,[{opacity:0,transform:'translateX(-24px)'},{opacity:1,transform:'none'}],380,{delay:600+i*70}));
   await w(1200);Sam.pose('wave')}}
@@ -634,6 +645,16 @@ addEventListener('resize',fit);fit();buildWorld();requestAnimationFrame(render);
 window.__go=go;window.__state=()=>({cur,busy,cam:{...cam}});
 (document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]):Promise.resolve()).then(()=>go(0,true));
 
+
+(()=>{const T=['Title: Is College Worth It?','The Promise','Price tag: $45,000','College Row: price by school','Sticker vs. net price','Forgone earnings','Who finishes college','Finishing late','The payoff gap','The doors that pay','Arts & humanities rage','Sam graduates: debt','Monthly payments','Payment trouble','The job market','Earnings staircase','12.5% average return','Other paths','Four questions','Conclusion','Sources'];
+ const b=document.getElementById('jbtn'),m=document.getElementById('jmenu');
+ m.innerHTML=T.map((t,i)=>`<button data-n="${i}"><span>${i+1}</span>${t}</button>`).join('');
+ const open=v=>{m.classList.toggle('op',v);b.classList.toggle('op',v);if(v){m.querySelectorAll('button').forEach(x=>x.classList.toggle('cur',+x.dataset.n===cur));const c=m.querySelector('.cur');if(c)c.scrollIntoView({block:'nearest'})}};
+ ['click','pointerdown','touchstart','touchend'].forEach(ev=>{b.addEventListener(ev,e=>e.stopPropagation());m.addEventListener(ev,e=>e.stopPropagation())});
+ b.addEventListener('click',()=>open(!m.classList.contains('op')));
+ m.addEventListener('click',e=>{const x=e.target.closest('button');if(!x)return;open(false);go(+x.dataset.n,true)});
+ document.addEventListener('keydown',e=>{if(e.key==='g'||e.key==='G'){e.stopImmediatePropagation();open(!m.classList.contains('op'))}else if(e.key==='Escape')open(false)},true);
+ stage.addEventListener('click',()=>open(false),true);})();
 </script>
 </body></html>
 
