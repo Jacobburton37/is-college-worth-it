@@ -428,7 +428,7 @@ const S=[
  enter:async(L,w)=>{CARDS.forEach((c,i)=>{const cw=$('div','cw',L);at(cw,CC[i][0]-200,CC[i][1]-120);cw.style.setProperty('--r',[-2.5,1.5,-1.2][i]+'deg');cw.style.animationDelay=(-i*1.4)+'s';
    const cd=$('div','card',cw,`<div class="ct"><h3>${c[0]}</h3><p>${c[1]}</p></div>`);$('i','pin',cw);unfold(cd,i*200)});
   L.querySelectorAll('.plane').forEach(p=>A(p,[{opacity:1},{opacity:0}],140).finished.then(()=>p.remove()))}},
-{cam:[0,0,1],sam:{x:430,face:'shock'},chap:[2,'The Price Tag'],cap:'Average sticker price at a private college: about $45,000 a year. And that is before housing and food.',src:'College Board, Trends in College Pricing 2025',
+{cam:[0,0,1],sam:{x:430,face:'think'},chap:[1,'The Debate'],cap:'People see college differently. Some call it an investment. Others worry about the cost.',
  tr:async(old,L,w)=>{bigTree(L);const cws=[...old.querySelectorAll('.cw')];Sam.set(430,GY);Sam.flip(1);Sam.acc([]);Sam.face('think');
   (async()=>{await w(450);await camTo(0,0,1,1900)})().catch(()=>{});
   await Promise.all(cws.map(async(cw,j)=>{const[cx,cy]=CC[j],cd=cw.querySelector('.card');cw.style.animation='none';cw.style.transform=`rotate(${[-2.5,1.5,-1.2][j]}deg)`;
@@ -438,6 +438,26 @@ const S=[
    await tw(1600,p=>{b.style.transform=`translate(${lerp(cx,x1,E.io(p))-28}px,${cy+(y1-cy)*p*p-28}px) rotate(${p*760}deg)`},E.l);
    b.remove();canHit();if(j===0){Sam.face('shock');Sam.jump()}}));
   await w(0);old.remove();S[2].enter(L,w).catch(()=>{})},
+ enter:async(L,w)=>{Sam.face('think');L.__tree||bigTree(L);const X=1150,Y=410,AR=220;
+  const H=[[860,'Why some support college','t'],[1330,'Why some disagree','r']];
+  const P=[['It helps students gain knowledge and valuable skills.','It prepares students for professional jobs that need special training.','It can open doors to more career opportunities.'],['College can be expensive and may lead to debt.','A college degree does not guarantee a job.','Some careers can be learned through technical training or apprenticeships.']];
+  const hd=H.map(([x,t,c])=>{const d=C(L,x,96,t,'chip '+c);d.style.fontSize='24px';return d});
+  // the scale
+  const pole=$('div','',L,sv(60,400,`<rect x="24" y="0" width="12" height="380" rx="6" fill="#8a6a3c"/><ellipse cx="30" cy="386" rx="56" ry="12" fill="#6b4e2a"/><circle cx="30" cy="6" r="14" fill="#ffc83d" stroke="#23305a" stroke-width="4"/>`));at(pole,X-30,Y-6);
+  const beam=$('div','',L,sv(AR*2+20,20,`<rect x="0" y="4" width="${AR*2+20}" height="12" rx="6" fill="#23305a"/>`));at(beam,X-AR-10,Y-10);beam.style.transformOrigin='50% 50%';
+  const pan=[0,1].map(k=>{const p=$('div','',L,sv(190,150,`<path d="M95 0 L20 110 M95 0 L170 110" stroke="#23305a" stroke-width="3"/><path d="M8 110 H182 Q170 140 95 140 Q20 140 8 110Z" fill="${k?'#e8553d':'#2bb3a3'}" stroke="#23305a" stroke-width="4"/>`));p.style.zIndex=2;const st=$('div','',p);st.style.cssText='position:absolute;left:30px;bottom:38px;width:130px;display:flex;flex-wrap:wrap-reverse;justify-content:center;gap:4px';p.st=st;return p});
+  let ang=0;const set=a=>{ang=a;beam.style.transform=`rotate(${a}deg)`;const r=a*Math.PI/180;[-1,1].forEach((d,k)=>{const ex=X+d*AR*Math.cos(r),ey=Y+d*AR*Math.sin(r);pan[k].style.transform=`translate(${ex-95}px,${ey}px)`})};set(0);
+  [pole,beam,...pan].forEach((e,i)=>A(e,[{opacity:0,transform:(e.style.transform||'')+' translateY(40px)'},{opacity:1,transform:e.style.transform||'none'}],500,{delay:200+i*80,fill:'backwards'}));
+  hd.forEach((d,i)=>pop(d,300+i*200));await w(900);
+  const tilt=(to,d=650)=>{const a0=ang;return tw(d,p=>set(lerp(a0,to,p)+Math.sin(p*Math.PI*3)*(1-p)*3),E.o)};
+  let bal=0;
+  for(let r=0;r<3;r++)for(let k=0;k<2;k++){const[x]=H[k];const c=C(L,x,150+r*72,P[k][r],'chip sm wrap '+H[k][2]);c.style.width='420px';c.style.textAlign='left';pop(c,0,450);await w(380);
+   const wt=$('div','',pan[k].st);wt.style.cssText=`width:36px;height:28px;border-radius:6px;background:${k?'#ffd3c9':'#c9f1ec'};border:3px solid #23305a;font:700 18px var(--f);color:#23305a;display:flex;align-items:center;justify-content:center`;wt.textContent=k?'−':'+';
+   A(wt,[{transform:'translateY(-160px)',opacity:0},{transform:'translateY(-160px)',opacity:1,offset:.1},{transform:'translateY(6px)',opacity:1,offset:.8},{transform:'none',opacity:1}],520,{easing:'ease-in'});
+   await w(420);bal+=k?1:-1;await tilt(bal*7,600)}
+  await tilt(-3,500);await tilt(2.5,500);await tilt(0,700);
+  Sam.face('smile');Sam.pose('point');const bb=bub(L,270,392,"Let's check the numbers!");bb.style.setProperty('--tx','150px');bb.style.zIndex=5;pop(bb,0,450)}},
+{cam:[0,0,1],sam:{x:430,face:'shock'},chap:[2,'The Price Tag'],cap:'Average sticker price at a private college: about $45,000 a year. And that is before housing and food.',src:'College Board, Trends in College Pricing 2025',
  enter:async(L,w)=>{Sam.face('think');const tr=L.__tree||bigTree(L);
   const it=[{x:800,y:96,w:640,h:`<div class="kk">Private 4-year tuition &middot; 2025&ndash;26</div>`},{x:800,y:166,w:520,h:`<div class="nm">$45,000</div><div class="nt">a year, before financial aid</div>`},{x:800,y:392,w:640,h:`<div class="nt lg">Average published tuition and fees. Housing, food and transportation cost extra.</div>`}];
   it.forEach(o=>{const d=box(L,o.x,o.y,o.w,o.h);d.style.visibility='hidden';d.style.zIndex=3;o.d=d;o.cx=o.x+d.offsetWidth/2;o.cy=o.y+d.offsetHeight/2});
@@ -505,7 +525,7 @@ const S=[
   for(let i=0;i<3;i++){await Sam.walkTo(ox+D[i][0]-150,GY,i?900:500);Sam.flip(1);A(dr[i],[{transform:'perspective(700px) rotateY(0)'},{transform:'perspective(700px) rotateY(-78deg)'}],700);
    pop(C(L,ox+D[i][0],104,`<h3>${D[i][1]}</h3><p>${D[i][2]}</p>`,'card2'),300);Sam.face(['grin','grin','grin'][i]);Sam.jump();await w(1000)}
   Sam.pose('cheer');pop(bub(L,Sam.x+40,440,'These three actually pay!'),0,450)}},
-{cam:[Z(6),0,1],sam:{x:Z(6)+1430,face:'think',flip:-1},same:1,chap:[4,'The Payoff Gap'],cap:'Everyone else? Sam checks how arts and humanities grads are doing... and completely loses it.',src:'NY Fed, recent grads 22–27 (2024 data, Feb 2026 release); Georgetown CEW (film & photo, 2021–23). Underemployed = job doesn’t usually need a degree.',
+{cam:[Z(6),0,1],sam:{x:Z(6)+1430,face:'think',flip:-1},same:1,chap:[4,'The Payoff Gap'],cap:'Everyone else? Sam checks on arts, humanities and education grads... and loses it.',src:'NY Fed, recent grads 22–27 (2024 data); Georgetown CEW (film & photo 2021–23; education, workers 25–54). Underemployed = job doesn’t usually need a degree.',
  enter:async(L,w)=>{const ox=Z(6);Sam.flip(-1);
   const RW=[['Performing arts',63.9,'7.0% jobless'],['Fine arts',58.9,'7.7% jobless'],['Anthropology',55.3,'7.9% jobless'],['Liberal arts',54.6,''],['All majors',42,'',1]];
   const bd=$('div','rb',L,`<div class="hd">RECENT GRADS IN JOBS THAT DON'T NEED A DEGREE</div><div class="hs">Underemployment by major &middot; ages 22&ndash;27</div>`+RW.map(r=>`<div class="rr${r[3]?' ref':''}"><div class="ml">${r[0]}</div><div class="tk2"><div class="bf" style="width:${r[1]/70*100}%"></div></div><div class="pv">0%</div><div class="un">${r[2]}</div></div>`).join(''));at(bd,ox+110,92);
@@ -516,6 +536,7 @@ const S=[
    fadeIn(r.querySelector('.un'),500,300);if(i===1)Sam.face('worry');if(i===2){Sam.face('rage');Sam.on('steam')}await w(i===rows.length-2?900:650)}
   const c1=C(L,ox+420,568,'Film &amp; photo grads: <b>11%</b> unemployed','chip r');pop(c1,0,450);
   const c2=C(L,ox+905,568,'Nursing grads: just <b>2.1%</b> unemployed','chip t');pop(c2,250,450);
+  const c3=C(L,ox+660,640,'Education majors: <b>$58K</b> median pay, among the lowest of any field (STEM: $98K)','chip r');pop(c3,500,450);
   await w(500);Sam.face('rage');Sam.on('steam');Sam.on('sweat',false);Sam.pose('fists');shake(26,900);
   for(let k=0;k<3;k++){Sam.jump();await w(380)}
   const b=bub(L,ox+1180,404,'ARE YOU KIDDING ME?!');b.style.setProperty('--tx','200px');b.style.fontSize='27px';pop(b,0,420);
@@ -567,6 +588,17 @@ const S=[
   await w(1000);for(let k=0;k<6;k++){const cn=$('div','coin',L);at(cn,ox+1390+[-50,10,50,-20,30,-60][k]-15,ty-190+[-30,-60,-10,20,30,10][k]-15);cn.style.zIndex=3;pop(cn,k*120,400)}
   const b=box(L,ox+480,70,560,'<div class="kk">Typical graduate &middot; 2024</div><div class="nm">0%</div><div class="nt lg">yearly return, counting tuition AND lost wages</div>');pop(b,300);cnt(b.querySelector('.nm'),12.5,{dec:1,suf:'%',dl:400,d:1200});
   await w(1900);Sam.pose('cheer');pop(C(L,ox+760,350,"The catch: you decide <b>before</b> knowing if you'll finish,<br>what you'll pay, or where you'll land.",'chip wrap'))}},
+{cam:[Z(10),0,1],sam:{x:Z(10)+1490,face:'smile',acc:['pack']},chap:[7,'The Other Side'],cap:'To be fair, college does real things for some students. Here is what it can give you.',src:'BLS Occupational Outlook Handbook (registered nurses, civil engineers, teachers); NACE, what employers look for on new grads’ resumes.',
+ enter:async(L,w)=>{const ox=Z(10);Sam.flip(-1);
+  const D=[['&#127891;','Credentials','Nurses must pass the NCLEX-RN license exam after nursing school. Engineers and teachers need a bachelor’s degree.'],
+   ['&#128300;','Hands-on learning','Labs, internships, co-ops and clinicals give real experience before the first job.'],
+   ['&#129309;','Workplace skills','Employers rank problem-solving and teamwork among the top skills they want in new grads.'],
+   ['&#128188;','Career prep','A degree is the entry ticket to jobs that need specialized knowledge.']];
+  const cx=[290,640,990,1340];
+  for(let i=0;i<4;i++){const[ic,h,p]=D[i];const c=C(L,ox+cx[i],92,`<div style="font-size:40px;line-height:1">${ic}</div><h3>${h}</h3><p>${p}</p>`,'card2');c.style.width='330px';c.style.textAlign='center';pop(c,0,500);
+   await w(700);const bd=$('div','',L,`<div style="width:46px;height:46px;border-radius:50%;background:#ffc83d;border:4px solid #23305a;display:flex;align-items:center;justify-content:center;font-size:24px">${ic}</div>`);bd.style.zIndex=3;
+   await flyPath(bd,[[ox+cx[i],330],[ox+(cx[i]+Sam.x-ox)/2+ox*0,200],[Sam.x+40,Sam.y-180]].map((q,j)=>j===1?[ (ox+cx[i]+Sam.x)/2,200]:q),700,E.io);bd.remove();Sam.jump();Sam.face('grin');await w(250)}
+  await w(300);Sam.face('think');pop(C(L,ox+800,345,'But college isn’t the only good path. The right choice depends on <b>the career, the program and the cost.</b>','chip wrap'),0,500)}},
 {cam:[Z(11),0,1],sam:{x:Z(11)+80,face:'think'},chap:[8,'Other Paths'],cap:'But a four-year degree is not the only path.',src:'BLS (May 2025 median pay); U.S. Dept. of Labor; CCRC/Aspen (fall 2015 entrants). Tradeoffs include physical demands and local job availability.',
  enter:async(L,w)=>{const ox=Z(11);const el=Char(L,{s:.6,skin:'sk3',hair:'short',hairC:'#1e1a1a',shirt:'#f29a2e',acc:['hat'],x:ox+304,y:722,face:'grin'});fadeIn(el.el,0,300);tw(1400,p=>el.set(ox+304,lerp(722,480,p)),E.io);
   const bus=$('div','bus',L,BUS);A(bus,[{transform:`translate(${ox+1720}px,568px)`},{transform:`translate(${ox+1180}px,568px)`}],1500,{delay:600,easing:'cubic-bezier(.2,.7,.3,1)'});
@@ -586,27 +618,31 @@ const S=[
 ,
 {cam:[Z(14),-760,1],sam:{x:Z(14)+300,face:'grin'},chap:null,cap:'Sources, and the slides that used each one.',
  enter:async(L,w)=>{const ox=Z(14);
-  const SRC=[['3, 4, 5','College Board: Trends in College Pricing 2025','https://research.collegeboard.org/trends/college-pricing'],
-   ['5, 19','Federal Student Aid: How to Evaluate Your Aid Offers','https://studentaid.gov/articles/evaluating-financial-aid-offers/'],
-   ['6, 9, 17','NY Fed: Is College Still Worth It? (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/is-college-still-worth-it/'],
-   ['7','National Student Clearinghouse: Completing College','https://nscresearchcenter.org/completing-college/'],
-   ['8, 9, 17','NY Fed: When College Might Not Be Worth It (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/when-college-might-not-be-worth-it/'],
-   ['10','Georgetown CEW: The Major Payoff (2025)','https://cew.georgetown.edu/cew-reports/major-payoff/'],
-   ['10','Georgetown CEW: law school reports','https://cew.georgetown.edu/report_tag/law-school/'],
-   ['11, 15','NY Fed: The Labor Market for Recent College Graduates','https://www.newyorkfed.org/research/college-labor-market'],
-   ['10, 11','Forbes: Unemployment & Underemployment Among Recent Grads (Feb 2026)','https://www.forbes.com/sites/michaeltnietzel/2026/02/23/unemployment-and-underemployment-rates-among-recent-college-graduates/'],
-   ['11','Georgetown CEW: Early-Career Earnings & Unemployment by Major','https://cew.georgetown.edu/resource/cew-blog-major-payoff/'],
-   ['12','College Board: Trends in Student Aid 2025','https://research.collegeboard.org/trends/student-aid'],
-   ['14','Federal Reserve: Economic Well-Being of U.S. Households in 2025','https://www.federalreserve.gov/publications/report-economic-well-being-us-households.htm'],
-   ['16','BLS: Education Pays (earnings & unemployment by education)','https://www.bls.gov/emp/chart-unemployment-earnings-education.htm'],
-   ['17','Zimmerman: The Returns to College Admission (J. Labor Econ.)','https://doi.org/10.1086/676661'],
-   ['18','BLS Occupational Outlook: Electricians','https://www.bls.gov/ooh/construction-and-extraction/electricians.htm'],
-   ['18','BLS Occupational Outlook: Dental Hygienists','https://www.bls.gov/ooh/healthcare/dental-hygienists.htm'],
-   ['18','U.S. Dept. of Labor: Apprenticeship for Career Seekers','https://www.apprenticeship.gov/career-seekers'],
-   ['18','CCRC / Aspen Institute: community college transfer reports','https://ccrc.tc.columbia.edu/press-releases/new-reports-all-backgrounds-transfer'],
-   ['19','U.S. Dept. of Education: College Scorecard','https://collegescorecard.ed.gov/']];
-  const pn=$('div','srcp',L,`<h2>Sources</h2><div class="sg">${SRC.map(([s,t,u])=>`<div class="sr"><span class="sb">${s.includes(',')?'Slides':'Slide'} ${s}</span><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}<div class="sr nt2"><span class="sb">Slides 6, 13</span><span>Illustrative example and our own calculations (forgone pay, 6% loan payments)</span></div></div>`);
-  at(pn,ox+70,-730);const cr=C(L,ox+800,-176,'<div class="cn">Presented by <b>Jacob Burton</b> &middot; <b>Marley Blazi</b> &middot; <b>Yumna Machano</b></div><div class="ac">Animated with Claude</div>','crd');A(cr,[{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],700,{delay:900});pn.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
+  const SRC=[['4, 5, 6','College Board: Trends in College Pricing 2025','https://research.collegeboard.org/trends/college-pricing'],
+   ['6, 21','Federal Student Aid: How to Evaluate Your Aid Offers','https://studentaid.gov/articles/evaluating-financial-aid-offers/'],
+   ['7, 10, 18','NY Fed: Is College Still Worth It? (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/is-college-still-worth-it/'],
+   ['8','National Student Clearinghouse: Completing College','https://nscresearchcenter.org/completing-college/'],
+   ['9, 10, 18','NY Fed: When College Might Not Be Worth It (Apr 2025)','https://libertystreeteconomics.newyorkfed.org/2025/04/when-college-might-not-be-worth-it/'],
+   ['11, 12','Georgetown CEW: The Major Payoff (2025)','https://cew.georgetown.edu/cew-reports/major-payoff/'],
+   ['11','Georgetown CEW: law school reports','https://cew.georgetown.edu/report_tag/law-school/'],
+   ['12, 16','NY Fed: The Labor Market for Recent College Graduates','https://www.newyorkfed.org/research/college-labor-market'],
+   ['11, 12','Forbes: Unemployment & Underemployment Among Recent Grads (Feb 2026)','https://www.forbes.com/sites/michaeltnietzel/2026/02/23/unemployment-and-underemployment-rates-among-recent-college-graduates/'],
+   ['12','Georgetown CEW: Early-Career Earnings & Unemployment by Major','https://cew.georgetown.edu/resource/cew-blog-major-payoff/'],
+   ['13','College Board: Trends in Student Aid 2025','https://research.collegeboard.org/trends/student-aid'],
+   ['15','Federal Reserve: Economic Well-Being of U.S. Households in 2025','https://www.federalreserve.gov/publications/report-economic-well-being-us-households.htm'],
+   ['17','BLS: Education Pays (earnings & unemployment by education)','https://www.bls.gov/emp/chart-unemployment-earnings-education.htm'],
+   ['18','Zimmerman: The Returns to College Admission (J. Labor Econ.)','https://doi.org/10.1086/676661'],
+   ['20','BLS Occupational Outlook: Electricians','https://www.bls.gov/ooh/construction-and-extraction/electricians.htm'],
+   ['20','BLS Occupational Outlook: Dental Hygienists','https://www.bls.gov/ooh/healthcare/dental-hygienists.htm'],
+   ['20','U.S. Dept. of Labor: Apprenticeship for Career Seekers','https://www.apprenticeship.gov/career-seekers'],
+   ['20','CCRC / Aspen Institute: community college transfer reports','https://ccrc.tc.columbia.edu/press-releases/new-reports-all-backgrounds-transfer'],
+   ['21','U.S. Dept. of Education: College Scorecard','https://collegescorecard.ed.gov/'],
+   ['19','BLS Occupational Outlook: Registered Nurses','https://www.bls.gov/ooh/healthcare/registered-nurses.htm'],
+   ['19','BLS Occupational Outlook: Civil Engineers','https://www.bls.gov/ooh/architecture-and-engineering/civil-engineers.htm'],
+   ['19','BLS Occupational Outlook: Kindergarten & Elementary Teachers','https://www.bls.gov/ooh/education-training-and-library/kindergarten-and-elementary-school-teachers.htm'],
+   ['19','NACE: What employers look for on college students’ resumes','https://www.naceweb.org/talent-acquisition/candidate-selection/what-are-employers-looking-for-when-reviewing-college-students-resumes']];
+  const pn=$('div','srcp',L,`<h2>Sources</h2><div class="sg">${SRC.map(([s,t,u])=>`<div class="sr"><span class="sb">${s.includes(',')?'Slides':'Slide'} ${s}</span><a href="${u}" target="_blank" rel="noopener">${t}</a></div>`).join('')}<div class="sr nt2"><span class="sb">Slides 7, 14</span><span>Illustrative example and our own calculations (forgone pay, 6% loan payments)</span></div></div>`);
+  at(pn,ox+70,-730);const cr=C(L,ox+800,-120,'<div class="cn">Presented by <b>Jacob Burton</b> &middot; <b>Marley Blazi</b> &middot; <b>Yumna Machano</b></div><div class="ac">Animated with Claude</div>','crd');A(cr,[{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],700,{delay:900});pn.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
   A(pn,[{opacity:0,transform:'translateY(60px) scale(.96)'},{opacity:1,transform:'none'}],700,{delay:200});
   pn.querySelectorAll('.sr').forEach((r,i)=>A(r,[{opacity:0,transform:'translateX(-24px)'},{opacity:1,transform:'none'}],380,{delay:600+i*70}));
   await w(1200);Sam.pose('wave')}}
@@ -646,7 +682,7 @@ window.__go=go;window.__state=()=>({cur,busy,cam:{...cam}});
 (document.fonts&&document.fonts.ready?Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,1500))]):Promise.resolve()).then(()=>go(0,true));
 
 
-(()=>{const T=['Title: Is College Worth It?','The Promise','Price tag: $45,000','College Row: price by school','Sticker vs. net price','Forgone earnings','Who finishes college','Finishing late','The payoff gap','The doors that pay','Arts & humanities rage','Sam graduates: debt','Monthly payments','Payment trouble','The job market','Earnings staircase','12.5% average return','Other paths','Four questions','Conclusion','Sources'];
+(()=>{const T=['Title: Is College Worth It?','The Promise','Arguments: the debate','Price tag: $45,000','College Row: price by school','Sticker vs. net price','Forgone earnings','Who finishes college','Finishing late','The payoff gap','The doors that pay','Arts, humanities & education rage','Sam graduates: debt','Monthly payments','Payment trouble','The job market','Earnings staircase','12.5% average return','Why it can be worth it','Other paths','Four questions','Conclusion','Sources'];
  const b=document.getElementById('jbtn'),m=document.getElementById('jmenu');
  m.innerHTML=T.map((t,i)=>`<button data-n="${i}"><span>${i+1}</span>${t}</button>`).join('');
  const open=v=>{m.classList.toggle('op',v);b.classList.toggle('op',v);if(v){m.querySelectorAll('button').forEach(x=>x.classList.toggle('cur',+x.dataset.n===cur));const c=m.querySelector('.cur');if(c)c.scrollIntoView({block:'nearest'})}};
